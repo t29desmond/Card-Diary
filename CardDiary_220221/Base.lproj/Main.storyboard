@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7g-Vg-InB">
-                                <rect key="frame" x="62" y="244" width="290" height="418"/>
+                                <rect key="frame" x="62" y="235.66666666666666" width="290" height="434.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru2-P0-p1q">
                                         <rect key="frame" x="16" y="16" width="18.666666666666671" height="36"/>
@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTt-RU-Zst">
-                                        <rect key="frame" x="12.66666666666667" y="64" width="25.333333333333329" height="17"/>
+                                        <rect key="frame" x="12.66666666666667" y="64.000000000000028" width="25.333333333333329" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -37,6 +37,7 @@
                                     <constraint firstItem="rTt-RU-Zst" firstAttribute="centerX" secondItem="Ru2-P0-p1q" secondAttribute="centerX" id="Dpa-tf-oFK"/>
                                     <constraint firstItem="rTt-RU-Zst" firstAttribute="top" secondItem="Ru2-P0-p1q" secondAttribute="bottom" constant="12" id="Pai-mo-ueS"/>
                                     <constraint firstItem="Ru2-P0-p1q" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="16" id="QyU-S7-3Zp"/>
+                                    <constraint firstAttribute="width" secondItem="N7g-Vg-InB" secondAttribute="height" multiplier="1:1.5" id="ZiB-oz-hy5"/>
                                     <constraint firstItem="Ru2-P0-p1q" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="16" id="eHK-2V-oNV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -53,7 +54,6 @@
                             <constraint firstItem="N7g-Vg-InB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0qS-ar-hbY"/>
                             <constraint firstItem="N7g-Vg-InB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="5Hm-fV-X2t"/>
                             <constraint firstItem="N7g-Vg-InB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="D7y-g7-rpO"/>
-                            <constraint firstItem="N7g-Vg-InB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="70:150" id="GRe-y9-xdc"/>
                         </constraints>
                     </view>
                 </viewController>
