@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7g-Vg-InB">
-                                <rect key="frame" x="62" y="142.66666666666663" width="290" height="621"/>
+                                <rect key="frame" x="62" y="244" width="290" height="418"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru2-P0-p1q">
                                         <rect key="frame" x="16" y="16" width="18.666666666666671" height="36"/>
@@ -52,8 +52,8 @@
                         <constraints>
                             <constraint firstItem="N7g-Vg-InB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0qS-ar-hbY"/>
                             <constraint firstItem="N7g-Vg-InB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="5Hm-fV-X2t"/>
-                            <constraint firstItem="N7g-Vg-InB" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="1.5" id="A3S-tn-2VN"/>
                             <constraint firstItem="N7g-Vg-InB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="D7y-g7-rpO"/>
+                            <constraint firstItem="N7g-Vg-InB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="70:150" id="GRe-y9-xdc"/>
                         </constraints>
                     </view>
                 </viewController>
