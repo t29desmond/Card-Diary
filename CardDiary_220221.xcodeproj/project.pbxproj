@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70BBB5F27C752A500244D90 /* SuguePushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */; };
 		F7C7413D27C2A52100079F17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7413C27C2A52100079F17 /* AppDelegate.swift */; };
 		F7C7413F27C2A52100079F17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7413E27C2A52100079F17 /* SceneDelegate.swift */; };
 		F7C7414127C2A52100079F17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7414027C2A52100079F17 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuguePushViewController.swift; sourceTree = "<group>"; };
 		F7C7413927C2A52100079F17 /* CardDiary_220221.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardDiary_220221.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C7413C27C2A52100079F17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C7413E27C2A52100079F17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				F7C7414527C2A52200079F17 /* Assets.xcassets */,
 				F7C7414727C2A52200079F17 /* LaunchScreen.storyboard */,
 				F7C7414A27C2A52200079F17 /* Info.plist */,
+				F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */,
 			);
 			path = CardDiary_220221;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70BBB5F27C752A500244D90 /* SuguePushViewController.swift in Sources */,
 				F7C7414127C2A52100079F17 /* ViewController.swift in Sources */,
 				F7C7413D27C2A52100079F17 /* AppDelegate.swift in Sources */,
 				F7C7413F27C2A52100079F17 /* SceneDelegate.swift in Sources */,
@@ -455,7 +459,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -482,7 +486,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
