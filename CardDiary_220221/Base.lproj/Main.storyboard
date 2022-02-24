@@ -123,7 +123,7 @@
                                     <constraint firstItem="Nvh-8W-FEt" firstAttribute="leading" secondItem="FlP-iU-yXp" secondAttribute="trailing" constant="30" id="Xca-Wu-d8q"/>
                                     <constraint firstAttribute="trailing" secondItem="Nvh-8W-FEt" secondAttribute="trailing" constant="20" symbolic="YES" id="aSO-ku-gjk"/>
                                     <constraint firstItem="87K-s2-rSM" firstAttribute="leading" secondItem="WHl-kp-dHi" secondAttribute="leading" constant="30" id="b9L-FY-5Gx"/>
-                                    <constraint firstItem="87K-s2-rSM" firstAttribute="trailing" secondItem="FlP-iU-yXp" secondAttribute="trailing" constant="-30" id="trY-Xh-NFS"/>
+                                    <constraint firstItem="87K-s2-rSM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FlP-iU-yXp" secondAttribute="trailing" constant="-30" id="trY-Xh-NFS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>

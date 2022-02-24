@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F70BBB5F27C752A500244D90 /* SuguePushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */; };
+		F70BBB6127C796CC00244D90 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70BBB6027C796CC00244D90 /* SegueViewController.swift */; };
 		F7C7413D27C2A52100079F17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7413C27C2A52100079F17 /* AppDelegate.swift */; };
 		F7C7413F27C2A52100079F17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7413E27C2A52100079F17 /* SceneDelegate.swift */; };
 		F7C7414127C2A52100079F17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7414027C2A52100079F17 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuguePushViewController.swift; sourceTree = "<group>"; };
+		F70BBB6027C796CC00244D90 /* SegueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
 		F7C7413927C2A52100079F17 /* CardDiary_220221.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardDiary_220221.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C7413C27C2A52100079F17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C7413E27C2A52100079F17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				F7C7414727C2A52200079F17 /* LaunchScreen.storyboard */,
 				F7C7414A27C2A52200079F17 /* Info.plist */,
 				F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */,
+				F70BBB6027C796CC00244D90 /* SegueViewController.swift */,
 			);
 			path = CardDiary_220221;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				F70BBB5F27C752A500244D90 /* SuguePushViewController.swift in Sources */,
 				F7C7414127C2A52100079F17 /* ViewController.swift in Sources */,
 				F7C7413D27C2A52100079F17 /* AppDelegate.swift in Sources */,
+				F70BBB6127C796CC00244D90 /* SegueViewController.swift in Sources */,
 				F7C7413F27C2A52100079F17 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZ4538JV6D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CardDiary_220221/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,6 +475,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZ4538JV6D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CardDiary_220221/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
