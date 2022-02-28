@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F70BBB5F27C752A500244D90 /* SuguePushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */; };
-		F70BBB6127C796CC00244D90 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70BBB6027C796CC00244D90 /* SegueViewController.swift */; };
+		F7B35F8B27CC69EA008E7A9A /* CustomView_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B35F8A27CC69EA008E7A9A /* CustomView_main.swift */; };
+		F7B35F8D27CC69F6008E7A9A /* CustomView_main.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B35F8C27CC69F6008E7A9A /* CustomView_main.xib */; };
 		F7C7413D27C2A52100079F17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7413C27C2A52100079F17 /* AppDelegate.swift */; };
 		F7C7413F27C2A52100079F17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7413E27C2A52100079F17 /* SceneDelegate.swift */; };
 		F7C7414127C2A52100079F17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7414027C2A52100079F17 /* ViewController.swift */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuguePushViewController.swift; sourceTree = "<group>"; };
-		F70BBB6027C796CC00244D90 /* SegueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
+		F7B35F8A27CC69EA008E7A9A /* CustomView_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView_main.swift; sourceTree = "<group>"; };
+		F7B35F8C27CC69F6008E7A9A /* CustomView_main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView_main.xib; sourceTree = "<group>"; };
 		F7C7413927C2A52100079F17 /* CardDiary_220221.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardDiary_220221.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C7413C27C2A52100079F17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C7413E27C2A52100079F17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 				F7C7414527C2A52200079F17 /* Assets.xcassets */,
 				F7C7414727C2A52200079F17 /* LaunchScreen.storyboard */,
 				F7C7414A27C2A52200079F17 /* Info.plist */,
-				F70BBB5E27C752A500244D90 /* SuguePushViewController.swift */,
-				F70BBB6027C796CC00244D90 /* SegueViewController.swift */,
+				F7B35F8A27CC69EA008E7A9A /* CustomView_main.swift */,
+				F7B35F8C27CC69F6008E7A9A /* CustomView_main.xib */,
 			);
 			path = CardDiary_220221;
 			sourceTree = "<group>";
@@ -238,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C7414927C2A52200079F17 /* LaunchScreen.storyboard in Resources */,
+				F7B35F8D27CC69F6008E7A9A /* CustomView_main.xib in Resources */,
 				F7C7414627C2A52200079F17 /* Assets.xcassets in Resources */,
 				F7C7414427C2A52100079F17 /* Main.storyboard in Resources */,
 			);
@@ -264,10 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70BBB5F27C752A500244D90 /* SuguePushViewController.swift in Sources */,
 				F7C7414127C2A52100079F17 /* ViewController.swift in Sources */,
+				F7B35F8B27CC69EA008E7A9A /* CustomView_main.swift in Sources */,
 				F7C7413D27C2A52100079F17 /* AppDelegate.swift in Sources */,
-				F70BBB6127C796CC00244D90 /* SegueViewController.swift in Sources */,
 				F7C7413F27C2A52100079F17 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -430,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
