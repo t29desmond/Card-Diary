@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //  Main Card 문자열
         mainCardCustomView.mainMonthNum.font = mainCardCustomView.mainMonthNum.font.withSize(70)
         mainCardCustomView.mainMonthNum.text = "3"

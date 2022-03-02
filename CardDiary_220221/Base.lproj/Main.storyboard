@@ -27,16 +27,16 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3r-js-cut" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="37" width="92" height="128"/>
+                                        <rect key="frame" x="0.0" y="37" width="120" height="128"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2du-F6-zk8" secondAttribute="bottom" constant="30" id="7Qd-Kx-eEw"/>
                                     <constraint firstAttribute="trailing" secondItem="e3r-js-cut" secondAttribute="trailing" constant="170" id="UvX-11-phf"/>
                                     <constraint firstAttribute="width" secondItem="N7g-Vg-InB" secondAttribute="height" multiplier="1:1.5" id="ZiB-oz-hy5"/>
                                     <constraint firstItem="2du-F6-zk8" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="12" id="aGH-uX-QP3"/>
-                                    <constraint firstItem="e3r-js-cut" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="28" id="g5J-QQ-ZTD"/>
+                                    <constraint firstItem="e3r-js-cut" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" id="g5J-QQ-ZTD"/>
                                     <constraint firstItem="e3r-js-cut" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="37" id="j9J-oy-ADW"/>
                                     <constraint firstAttribute="bottom" secondItem="e3r-js-cut" secondAttribute="bottom" constant="270" id="jih-u3-EA1"/>
                                     <constraint firstAttribute="trailing" secondItem="2du-F6-zk8" secondAttribute="trailing" constant="12" id="lYl-Hb-5G3"/>
@@ -76,19 +76,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-t1-oH2">
-                                <rect key="frame" x="41.5" y="118" width="331" height="106"/>
+                                <rect key="frame" x="41.5" y="118" width="331" height="99"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74B-4p-6mU">
-                                        <rect key="frame" x="93.5" y="0.0" width="2" height="106"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74B-4p-6mU" userLabel="lineView">
+                                        <rect key="frame" x="77" y="0.0" width="2" height="99.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhv-6M-hk7" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="20" width="40" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" ambiguous="YES" text="안녕하세요안녕하세요안녕하세요안녕하세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg3-rB-ATS">
+                                        <rect key="frame" x="93" y="12" width="295" height="75"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nhv-6M-hk7" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="12" width="51" height="75"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="74B-4p-6mU" secondAttribute="bottom" constant="-0.5" id="3MO-vL-4CL"/>
+                                    <constraint firstItem="fg3-rB-ATS" firstAttribute="leading" secondItem="74B-4p-6mU" secondAttribute="trailing" constant="14" id="3ll-FK-BPl"/>
+                                    <constraint firstAttribute="width" secondItem="Asi-t1-oH2" secondAttribute="height" multiplier="331:99" id="5fz-93-O5a"/>
+                                    <constraint firstItem="74B-4p-6mU" firstAttribute="leading" secondItem="Asi-t1-oH2" secondAttribute="leading" constant="77" id="6fA-ML-3Dq"/>
+                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="leading" secondItem="Asi-t1-oH2" secondAttribute="leading" constant="14" id="DV0-ih-V7o"/>
+                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="top" secondItem="Asi-t1-oH2" secondAttribute="top" constant="12" id="RW9-xX-2Q4"/>
+                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="centerY" secondItem="Asi-t1-oH2" secondAttribute="centerY" id="WNT-fq-tPq"/>
+                                    <constraint firstAttribute="bottom" secondItem="nhv-6M-hk7" secondAttribute="bottom" constant="12" id="gEM-Io-i3i"/>
+                                    <constraint firstItem="74B-4p-6mU" firstAttribute="leading" secondItem="nhv-6M-hk7" secondAttribute="trailing" constant="12" id="qYn-wc-vr2"/>
+                                    <constraint firstItem="74B-4p-6mU" firstAttribute="top" secondItem="Asi-t1-oH2" secondAttribute="top" id="xRH-Ss-JDa"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -100,11 +116,11 @@
                         <viewLayoutGuide key="safeArea" id="IgQ-gm-G8R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Asi-t1-oH2" firstAttribute="leading" secondItem="IgQ-gm-G8R" secondAttribute="leading" constant="41.5" id="0md-Gq-mi4"/>
-                            <constraint firstItem="Asi-t1-oH2" firstAttribute="top" secondItem="IgQ-gm-G8R" secondAttribute="top" constant="30" id="B3k-sE-UFV"/>
-                            <constraint firstItem="Asi-t1-oH2" firstAttribute="centerX" secondItem="IgQ-gm-G8R" secondAttribute="centerX" id="blN-xi-Sgp"/>
-                            <constraint firstItem="IgQ-gm-G8R" firstAttribute="bottom" secondItem="Asi-t1-oH2" secondAttribute="bottom" constant="638" id="kX9-hp-IJS"/>
-                            <constraint firstItem="IgQ-gm-G8R" firstAttribute="trailing" secondItem="Asi-t1-oH2" secondAttribute="trailing" constant="41.5" id="t8j-XI-riZ"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="leading" secondItem="IgQ-gm-G8R" secondAttribute="leading" constant="41.5" id="6gL-qL-UVQ"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="centerX" secondItem="IgQ-gm-G8R" secondAttribute="centerX" id="K3t-vR-Sas"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="top" secondItem="IgQ-gm-G8R" secondAttribute="top" constant="30" id="MJ2-aq-74Q"/>
+                            <constraint firstItem="IgQ-gm-G8R" firstAttribute="trailing" secondItem="Asi-t1-oH2" secondAttribute="trailing" constant="41.5" id="RQj-OW-dyA"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="height" secondItem="h4F-14-9sc" secondAttribute="height" multiplier="0.110491" id="XVT-TN-E53"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="viG-Lx-sJg"/>
@@ -137,8 +153,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -18,11 +18,15 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        historyCardCustomView.mainMonthNum.text = "14"
-        historyCardCustomView.mainMonthNum.font = historyCardCustomView.mainMonthNum.font.withSize(26)
-        historyCardCustomView.mainMonthText.text = "MON"
-        historyCardCustomView.mainMonthText.font = historyCardCustomView.mainMonthText.font.withSize(10)
+            historyCardCustomView.mainMonthNum.text = "30"
+            historyCardCustomView.mainMonthNum.font = historyCardCustomView.mainMonthNum.font.withSize(22)
+            historyCardCustomView.mainMonthText.text = "MON"
+            historyCardCustomView.mainMonthText.font = historyCardCustomView.mainMonthText.font.withSize(12)
+
         
+//        historyCardCustomView.topBottomConstraints = historyCardCustomView.mainMonthText.topAnchor.constraint(equalTo: historyCardCustomView.mainMonthNum.bottomAnchor, constant: 10)
+            historyCardCustomView.topBottomConstraints.constant = 1.2
+    
     }
     
 }
