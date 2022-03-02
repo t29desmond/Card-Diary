@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var mainCardCustomView: CustomView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //  Main Card 문자열
+        mainCardCustomView.mainMonthNum.font = mainCardCustomView.mainMonthNum.font.withSize(70)
+        mainCardCustomView.mainMonthNum.text = "3"
+
+        mainCardCustomView.mainMonthText.text = "MAR"
     }
 
 

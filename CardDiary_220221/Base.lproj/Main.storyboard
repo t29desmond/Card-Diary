@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WDW-Ex-del">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,35 +12,35 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CardDiary_220221" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="CustomVIewMainCard" customModule="CardDiary_220221" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7g-Vg-InB">
                                 <rect key="frame" x="62" y="257.5" width="290" height="435"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V13-GT-Egz" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="32" width="100" height="100"/>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2du-F6-zk8">
-                                        <rect key="frame" x="12" y="30" width="266" height="375"/>
+                                        <rect key="frame" x="12" y="100" width="266" height="305"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
-                                            <segue destination="7yS-z0-Y7b" kind="show" id="pT8-l4-Lfw"/>
+                                            <segue destination="H31-Qk-04S" kind="show" id="1bZ-Bg-LHt"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3r-js-cut" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
+                                        <rect key="frame" x="28" y="37" width="92" height="128"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2du-F6-zk8" secondAttribute="bottom" constant="30" id="7Qd-Kx-eEw"/>
-                                    <constraint firstItem="V13-GT-Egz" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="30" id="DM7-PR-Cwd"/>
-                                    <constraint firstAttribute="bottom" secondItem="V13-GT-Egz" secondAttribute="bottom" constant="303" id="DV4-0t-VY7"/>
+                                    <constraint firstAttribute="trailing" secondItem="e3r-js-cut" secondAttribute="trailing" constant="170" id="UvX-11-phf"/>
                                     <constraint firstAttribute="width" secondItem="N7g-Vg-InB" secondAttribute="height" multiplier="1:1.5" id="ZiB-oz-hy5"/>
                                     <constraint firstItem="2du-F6-zk8" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="12" id="aGH-uX-QP3"/>
+                                    <constraint firstItem="e3r-js-cut" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="28" id="g5J-QQ-ZTD"/>
+                                    <constraint firstItem="e3r-js-cut" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="37" id="j9J-oy-ADW"/>
+                                    <constraint firstAttribute="bottom" secondItem="e3r-js-cut" secondAttribute="bottom" constant="270" id="jih-u3-EA1"/>
                                     <constraint firstAttribute="trailing" secondItem="2du-F6-zk8" secondAttribute="trailing" constant="12" id="lYl-Hb-5G3"/>
-                                    <constraint firstItem="V13-GT-Egz" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="32" id="qBP-nF-N09"/>
-                                    <constraint firstAttribute="trailing" secondItem="V13-GT-Egz" secondAttribute="trailing" constant="160" id="vpY-z4-lux"/>
-                                    <constraint firstItem="2du-F6-zk8" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="30" id="w2M-P2-AJ1"/>
+                                    <constraint firstItem="2du-F6-zk8" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="100" id="w2M-P2-AJ1"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -60,76 +59,62 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SdR-S3-1tH"/>
+                    <connections>
+                        <outlet property="mainCardCustomView" destination="e3r-js-cut" id="R1F-Bj-3KW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.22429906542056" y="83.585313174946009"/>
+            <point key="canvasLocation" x="8.6956521739130448" y="83.705357142857139"/>
         </scene>
-        <!--Sugue Push View Controller-->
-        <scene sceneID="n4e-ba-Kp0">
+        <!--History View Controller-->
+        <scene sceneID="Lp7-km-w3X">
             <objects>
-                <viewController id="7yS-z0-Y7b" customClass="SuguePushViewController" customModule="CardDiary_220221" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EnQ-Ci-Wne">
+                <viewController id="H31-Qk-04S" customClass="HistoryViewController" customModule="CardDiary_220221" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h4F-14-9sc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHl-kp-dHi">
-                                <rect key="frame" x="41" y="163" width="332" height="156"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-t1-oH2">
+                                <rect key="frame" x="41.5" y="118" width="331" height="106"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-iU-yXp">
-                                        <rect key="frame" x="90" y="0.0" width="1" height="156"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74B-4p-6mU">
+                                        <rect key="frame" x="93.5" y="0.0" width="2" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="Pas-eQ-OXa"/>
-                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-8W-FEt">
-                                        <rect key="frame" x="121" y="68" width="78.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFf-gl-a2h" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="28" width="32" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="9qN-Cz-ahQ"/>
-                                            <constraint firstAttribute="width" constant="32" id="cM6-oj-eJA"/>
-                                        </constraints>
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhv-6M-hk7" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="20" width="40" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <constraints>
-                                    <constraint firstItem="FlP-iU-yXp" firstAttribute="top" secondItem="WHl-kp-dHi" secondAttribute="top" id="7lg-J6-4gz"/>
-                                    <constraint firstItem="FlP-iU-yXp" firstAttribute="leading" secondItem="dFf-gl-a2h" secondAttribute="trailing" constant="26" id="8ro-Jf-Sf5"/>
-                                    <constraint firstItem="Nvh-8W-FEt" firstAttribute="top" secondItem="WHl-kp-dHi" secondAttribute="top" constant="68" id="CMJ-lZ-sjA"/>
-                                    <constraint firstAttribute="bottom" secondItem="Nvh-8W-FEt" secondAttribute="bottom" constant="67" id="Dqe-cK-ZTi"/>
-                                    <constraint firstAttribute="bottom" secondItem="FlP-iU-yXp" secondAttribute="bottom" id="OkB-Wr-2KJ"/>
-                                    <constraint firstItem="Nvh-8W-FEt" firstAttribute="leading" secondItem="FlP-iU-yXp" secondAttribute="trailing" constant="30" id="Xca-Wu-d8q"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nvh-8W-FEt" secondAttribute="trailing" constant="20" symbolic="YES" id="aSO-ku-gjk"/>
-                                    <constraint firstItem="dFf-gl-a2h" firstAttribute="leading" secondItem="WHl-kp-dHi" secondAttribute="leading" constant="32" id="ayx-oc-FBc"/>
-                                    <constraint firstItem="dFf-gl-a2h" firstAttribute="centerY" secondItem="WHl-kp-dHi" secondAttribute="centerY" id="vVJ-gN-4xA"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="24"/>
+                                        <integer key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="tcE-re-SSC"/>
+                        <viewLayoutGuide key="safeArea" id="IgQ-gm-G8R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WHl-kp-dHi" firstAttribute="leading" secondItem="tcE-re-SSC" secondAttribute="leading" constant="41" id="DLW-qi-Afz"/>
-                            <constraint firstItem="WHl-kp-dHi" firstAttribute="centerX" secondItem="EnQ-Ci-Wne" secondAttribute="centerX" id="Knj-HW-JNO"/>
-                            <constraint firstItem="WHl-kp-dHi" firstAttribute="top" secondItem="tcE-re-SSC" secondAttribute="top" constant="75" id="ODu-kZ-GK2"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="leading" secondItem="IgQ-gm-G8R" secondAttribute="leading" constant="41.5" id="0md-Gq-mi4"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="top" secondItem="IgQ-gm-G8R" secondAttribute="top" constant="30" id="B3k-sE-UFV"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="centerX" secondItem="IgQ-gm-G8R" secondAttribute="centerX" id="blN-xi-Sgp"/>
+                            <constraint firstItem="IgQ-gm-G8R" firstAttribute="bottom" secondItem="Asi-t1-oH2" secondAttribute="bottom" constant="638" id="kX9-hp-IJS"/>
+                            <constraint firstItem="IgQ-gm-G8R" firstAttribute="trailing" secondItem="Asi-t1-oH2" secondAttribute="trailing" constant="41.5" id="t8j-XI-riZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="H2s-A2-f3F"/>
+                    <navigationItem key="navigationItem" id="viG-Lx-sJg"/>
+                    <connections>
+                        <outlet property="historyCardCustomView" destination="nhv-6M-hk7" id="1Ks-1a-rE5"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aLg-XV-uZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LdS-wG-K3s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794.20289855072474" y="83.035714285714278"/>
+            <point key="canvasLocation" x="840.57971014492762" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vSW-WS-gGM">

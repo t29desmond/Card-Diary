@@ -10,7 +10,11 @@ import UIKit
 @IBDesignable
 
 class CustomView: UIView {
-
+    
+    @IBOutlet weak var mainMonthNum: UILabel!
+    @IBOutlet weak var mainMonthText: UILabel!
+    
+    
     override init(frame: CGRect) {
          super.init(frame: frame)
          xibSetup()
@@ -25,16 +29,24 @@ class CustomView: UIView {
          super.init(coder: aDecoder)
          xibSetup()
      }
-
-     func xibSetup() {
-         guard let view = loadViewFromNib(nib: "CustomView_main") else {
+     
+    func xibSetup() {
+        guard let view = loadViewFromNib(nib: "CustomView") else {
              return
          }
-         view.frame = bounds
-         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-         addSubview(view)
-     }
+        
+        view.frame = bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(view)
+        
+  //  CustomView 생성
+        mainMonthNum.font = mainMonthNum.font.withSize(70)
+        mainMonthNum.text = "3"
 
+        mainMonthText.text = "MAR"
+     
+    }
+    
      func loadViewFromNib(nib: String) -> UIView? {
          let bundle = Bundle(for: type(of: self))
          let nib = UINib(nibName: nib, bundle: bundle)
