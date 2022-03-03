@@ -76,34 +76,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-t1-oH2">
-                                <rect key="frame" x="41.5" y="118" width="331" height="99"/>
+                                <rect key="frame" x="41.5" y="118" width="331" height="86"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74B-4p-6mU" userLabel="lineView">
-                                        <rect key="frame" x="77" y="0.0" width="2" height="99.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74B-4p-6mU" userLabel="lineView">
+                                        <rect key="frame" x="70.5" y="0.0" width="1" height="86"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="yZv-3N-HQo"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" ambiguous="YES" text="안녕하세요안녕하세요안녕하세요안녕하세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg3-rB-ATS">
-                                        <rect key="frame" x="93" y="12" width="295" height="75"/>
+                                    <view contentMode="scaleAspectFit" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="nhv-6M-hk7" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
+                                        <rect key="frame" x="13" y="-9" width="44.5" height="104.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="104.5" id="MqB-bT-AuO"/>
+                                            <constraint firstAttribute="width" priority="250" constant="44.5" id="pqF-BN-pYH"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" text="안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvF-Qf-ekj">
+                                        <rect key="frame" x="88.5" y="33" width="222.5" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nhv-6M-hk7" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                        <rect key="frame" x="14" y="12" width="51" height="75"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="74B-4p-6mU" secondAttribute="bottom" constant="-0.5" id="3MO-vL-4CL"/>
-                                    <constraint firstItem="fg3-rB-ATS" firstAttribute="leading" secondItem="74B-4p-6mU" secondAttribute="trailing" constant="14" id="3ll-FK-BPl"/>
-                                    <constraint firstAttribute="width" secondItem="Asi-t1-oH2" secondAttribute="height" multiplier="331:99" id="5fz-93-O5a"/>
-                                    <constraint firstItem="74B-4p-6mU" firstAttribute="leading" secondItem="Asi-t1-oH2" secondAttribute="leading" constant="77" id="6fA-ML-3Dq"/>
-                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="leading" secondItem="Asi-t1-oH2" secondAttribute="leading" constant="14" id="DV0-ih-V7o"/>
-                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="top" secondItem="Asi-t1-oH2" secondAttribute="top" constant="12" id="RW9-xX-2Q4"/>
-                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="centerY" secondItem="Asi-t1-oH2" secondAttribute="centerY" id="WNT-fq-tPq"/>
-                                    <constraint firstAttribute="bottom" secondItem="nhv-6M-hk7" secondAttribute="bottom" constant="12" id="gEM-Io-i3i"/>
-                                    <constraint firstItem="74B-4p-6mU" firstAttribute="leading" secondItem="nhv-6M-hk7" secondAttribute="trailing" constant="12" id="qYn-wc-vr2"/>
-                                    <constraint firstItem="74B-4p-6mU" firstAttribute="top" secondItem="Asi-t1-oH2" secondAttribute="top" id="xRH-Ss-JDa"/>
+                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="leading" secondItem="Asi-t1-oH2" secondAttribute="leading" constant="13" id="4Ho-uI-oId"/>
+                                    <constraint firstAttribute="trailing" secondItem="CvF-Qf-ekj" secondAttribute="trailing" constant="20" symbolic="YES" id="9c2-h0-knc"/>
+                                    <constraint firstItem="nhv-6M-hk7" firstAttribute="centerY" secondItem="Asi-t1-oH2" secondAttribute="centerY" id="E0o-Dw-7Uv"/>
+                                    <constraint firstItem="74B-4p-6mU" firstAttribute="top" secondItem="Asi-t1-oH2" secondAttribute="top" id="U50-kk-VOO"/>
+                                    <constraint firstItem="CvF-Qf-ekj" firstAttribute="top" secondItem="Asi-t1-oH2" secondAttribute="top" constant="33" id="eSb-sf-7Tt"/>
+                                    <constraint firstItem="CvF-Qf-ekj" firstAttribute="leading" secondItem="74B-4p-6mU" secondAttribute="leading" constant="18" id="iss-Ks-Qr1"/>
+                                    <constraint firstAttribute="bottom" secondItem="74B-4p-6mU" secondAttribute="bottom" id="nFc-7N-8Tg"/>
+                                    <constraint firstAttribute="bottom" secondItem="CvF-Qf-ekj" secondAttribute="bottom" constant="33" id="pJ4-Es-kcw"/>
+                                    <constraint firstItem="74B-4p-6mU" firstAttribute="leading" secondItem="nhv-6M-hk7" secondAttribute="trailing" constant="13" id="z1Y-Rb-lVW"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -116,11 +122,9 @@
                         <viewLayoutGuide key="safeArea" id="IgQ-gm-G8R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Asi-t1-oH2" firstAttribute="leading" secondItem="IgQ-gm-G8R" secondAttribute="leading" constant="41.5" id="6gL-qL-UVQ"/>
-                            <constraint firstItem="Asi-t1-oH2" firstAttribute="centerX" secondItem="IgQ-gm-G8R" secondAttribute="centerX" id="K3t-vR-Sas"/>
-                            <constraint firstItem="Asi-t1-oH2" firstAttribute="top" secondItem="IgQ-gm-G8R" secondAttribute="top" constant="30" id="MJ2-aq-74Q"/>
-                            <constraint firstItem="IgQ-gm-G8R" firstAttribute="trailing" secondItem="Asi-t1-oH2" secondAttribute="trailing" constant="41.5" id="RQj-OW-dyA"/>
-                            <constraint firstItem="Asi-t1-oH2" firstAttribute="height" secondItem="h4F-14-9sc" secondAttribute="height" multiplier="0.110491" id="XVT-TN-E53"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="top" secondItem="IgQ-gm-G8R" secondAttribute="top" constant="30" id="SCb-u5-87T"/>
+                            <constraint firstItem="Asi-t1-oH2" firstAttribute="leading" secondItem="IgQ-gm-G8R" secondAttribute="leading" constant="41.5" id="rt1-Q7-YZP"/>
+                            <constraint firstItem="IgQ-gm-G8R" firstAttribute="trailing" secondItem="Asi-t1-oH2" secondAttribute="trailing" constant="41.5" id="xqy-BV-A99"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="viG-Lx-sJg"/>

@@ -18,7 +18,7 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            historyCardCustomView.mainMonthNum.text = "30"
+            historyCardCustomView.mainMonthNum.text = "33"
             historyCardCustomView.mainMonthNum.font = historyCardCustomView.mainMonthNum.font.withSize(22)
             historyCardCustomView.mainMonthText.text = "MON"
             historyCardCustomView.mainMonthText.font = historyCardCustomView.mainMonthText.font.withSize(12)

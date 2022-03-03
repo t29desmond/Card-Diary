@@ -22,6 +22,7 @@ class CustomView: UIView {
          xibSetup()
      }
 
+
      override func prepareForInterfaceBuilder() {
          super.prepareForInterfaceBuilder()
           xibSetup()
@@ -46,8 +47,7 @@ class CustomView: UIView {
         mainMonthNum.text = "3"
         mainMonthText.text = "MAR"
     
-        
-        
+
 
         topBottomConstraints.constant = 0
 //        topBottomConstraints = mainMonthText.topAnchor.constraint(equalTo: mainMonthNum.bottomAnchor, constant: 0)
