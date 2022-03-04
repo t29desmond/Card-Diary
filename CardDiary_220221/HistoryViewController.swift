@@ -24,7 +24,7 @@ class HistoryViewController: UIViewController {
             historyCardCustomView.mainMonthText.font = historyCardCustomView.mainMonthText.font.withSize(12)
 
         
-//        historyCardCustomView.topBottomConstraints = historyCardCustomView.mainMonthText.topAnchor.constraint(equalTo: historyCardCustomView.mainMonthNum.bottomAnchor, constant: 10)
+// historyCardCustomView.topBottomConstraints = historyCardCustomView.mainMonthText.topAnchor.constraint(equalTo: historyCardCustomView.mainMonthNum.bottomAnchor, constant: 10)
             historyCardCustomView.topBottomConstraints.constant = 1.2
     
     }
