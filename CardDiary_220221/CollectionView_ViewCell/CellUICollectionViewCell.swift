@@ -8,4 +8,8 @@
 import UIKit
 
 class CellUICollectionViewCell: UICollectionViewCell {
+
+    
+    
+    
 }

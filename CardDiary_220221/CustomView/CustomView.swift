@@ -14,14 +14,12 @@ class CustomView: UIView {
     @IBOutlet weak var mainMonthNum: UILabel!
     @IBOutlet weak var mainMonthText: UILabel!
     
-    // constraint
-    @IBOutlet weak var topBottomConstraints: NSLayoutConstraint!
+    @IBOutlet weak var topBottomConstraints: NSLayoutConstraint! // constraint
     
     override init(frame: CGRect) {
          super.init(frame: frame)
          xibSetup()
      }
-
 
      override func prepareForInterfaceBuilder() {
          super.prepareForInterfaceBuilder()
@@ -32,25 +30,20 @@ class CustomView: UIView {
          super.init(coder: aDecoder)
          xibSetup()
      }
-     
+    
     func xibSetup() {
         guard let view = loadViewFromNib(nib: "CustomView") else {
              return
          }
-        
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
         
-        
-        mainMonthNum.font = mainMonthNum.font.withSize(70)
+        mainMonthNum.font = mainMonthNum.font.withSize(30)
         mainMonthNum.text = "3"
         mainMonthText.text = "MAR"
     
-
-
         topBottomConstraints.constant = 0
-//        topBottomConstraints = mainMonthText.topAnchor.constraint(equalTo: mainMonthNum.bottomAnchor, constant: 0)
         
     }
     
