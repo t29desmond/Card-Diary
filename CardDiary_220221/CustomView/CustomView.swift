@@ -14,7 +14,7 @@ class CustomView: UIView {
     @IBOutlet weak var mainMonthNum: UILabel!
     @IBOutlet weak var mainMonthText: UILabel!
     
-    @IBOutlet weak var topBottomConstraints: NSLayoutConstraint! // constraint
+//    @IBOutlet weak var topBottomConstraints: NSLayoutConstraint! // constraint
     
     override init(frame: CGRect) {
          super.init(frame: frame)
@@ -42,8 +42,9 @@ class CustomView: UIView {
         mainMonthNum.font = mainMonthNum.font.withSize(30)
         mainMonthNum.text = "3"
         mainMonthText.text = "MAR"
-    
-        topBottomConstraints.constant = 0
+        mainMonthNum.font = mainMonthNum.font.withSize(24)
+        mainMonthText.font = mainMonthText.font.withSize(10)
+//        topBottomConstraints.constant = -20
         
     }
     
