@@ -16,7 +16,6 @@ class MainViewController: UIViewController {
         mainCustomViewLbl.mainMonthNum.font = mainCustomViewLbl.mainMonthNum.font.withSize(46)
         mainCustomViewLbl.mainMonthText.text = "MON"
         mainCustomViewLbl.mainMonthText.font = mainCustomViewLbl.mainMonthText.font.withSize(20)
-//        mainCustomViewLbl.topBottomConstraints.constant = 0
     
     }
 }
