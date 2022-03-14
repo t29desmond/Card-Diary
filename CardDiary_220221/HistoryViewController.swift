@@ -7,14 +7,17 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HistoryViewController:
+  UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)
+  -> Int {
         return 5
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+  -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CellUICollectionViewCell else { return CellUICollectionViewCell() }
         return cell
         
@@ -22,6 +25,8 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      view.backgroundColor = .darkGray
+
     }
     
 }
