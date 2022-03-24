@@ -89,14 +89,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0L-lE-vk3">
-                                <rect key="frame" x="24" y="52" width="41.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0L-lE-vk3">
+                                <rect key="frame" x="24" y="52" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-wc-VEC" userLabel="FirstLIne">
-                                <rect key="frame" x="24" y="109" width="366" height="49.5"/>
+                                <rect key="frame" x="24" y="88.5" width="366" height="49.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffp-FH-W5r">
                                         <rect key="frame" x="0.0" y="0.0" width="49.5" height="49.5"/>
@@ -104,7 +104,9 @@
                                             <constraint firstAttribute="width" secondItem="ffp-FH-W5r" secondAttribute="height" multiplier="1:1" id="0YZ-h9-7lx"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tapColorBtn:" destination="W6D-YV-OMh" eventType="touchUpInside" id="a0b-YL-kek"/>
                                         </connections>
@@ -173,7 +175,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="dLs-Qc-DYj" userLabel="SecondLine">
-                                <rect key="frame" x="24" y="182.5" width="366" height="49"/>
+                                <rect key="frame" x="24" y="162" width="366" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X99-fw-PGZ">
                                         <rect key="frame" x="0.0" y="0.0" width="49.5" height="49"/>
@@ -266,18 +268,18 @@
                     </view>
                     <connections>
                         <outlet property="colorLb" destination="x0L-lE-vk3" id="C79-Sg-MfI"/>
-                        <outlet property="firstLineColorFive" destination="9Oi-iQ-Og6" id="Zx0-8W-3LJ"/>
-                        <outlet property="firstLineColorFour" destination="YVa-oH-LRJ" id="2zP-2X-xfl"/>
-                        <outlet property="firstLineColorOne" destination="ffp-FH-W5r" id="Ncg-rC-ELj"/>
-                        <outlet property="firstLineColorSix" destination="siD-3c-6Bx" id="Hrp-Om-Wbb"/>
-                        <outlet property="firstLineColorThree" destination="BP6-tE-UQK" id="SMG-vz-I8F"/>
-                        <outlet property="firstLineColorTwo" destination="WuA-Tv-AB6" id="g6z-yy-pN4"/>
-                        <outlet property="secondLineColorFive" destination="FkU-uM-7hy" id="0zL-m8-pea"/>
-                        <outlet property="secondLineColorFour" destination="CeU-j4-ZuE" id="j2X-VA-i8y"/>
-                        <outlet property="secondLineColorOne" destination="X99-fw-PGZ" id="QO6-1y-n2a"/>
-                        <outlet property="secondLineColorSix" destination="WRA-hP-Bbs" id="gcF-iH-bDT"/>
-                        <outlet property="secondLineColorThree" destination="9om-9J-GwH" id="qI9-V3-O7N"/>
-                        <outlet property="secondLineColorTwo" destination="qPU-1Y-qmk" id="2LI-IO-L1o"/>
+                        <outletCollection property="colorButtons" destination="ffp-FH-W5r" collectionClass="NSMutableArray" id="yFd-AK-FpT"/>
+                        <outletCollection property="colorButtons" destination="WuA-Tv-AB6" collectionClass="NSMutableArray" id="6mc-yU-mMT"/>
+                        <outletCollection property="colorButtons" destination="BP6-tE-UQK" collectionClass="NSMutableArray" id="FTD-DA-716"/>
+                        <outletCollection property="colorButtons" destination="YVa-oH-LRJ" collectionClass="NSMutableArray" id="FAg-JD-NDY"/>
+                        <outletCollection property="colorButtons" destination="9Oi-iQ-Og6" collectionClass="NSMutableArray" id="lKp-Rk-G9j"/>
+                        <outletCollection property="colorButtons" destination="siD-3c-6Bx" collectionClass="NSMutableArray" id="zCH-2f-AJD"/>
+                        <outletCollection property="colorButtons" destination="X99-fw-PGZ" collectionClass="NSMutableArray" id="RFl-It-K72"/>
+                        <outletCollection property="colorButtons" destination="qPU-1Y-qmk" collectionClass="NSMutableArray" id="41q-eY-IlE"/>
+                        <outletCollection property="colorButtons" destination="9om-9J-GwH" collectionClass="NSMutableArray" id="KoU-Nu-4eN"/>
+                        <outletCollection property="colorButtons" destination="CeU-j4-ZuE" collectionClass="NSMutableArray" id="UfN-c6-s3h"/>
+                        <outletCollection property="colorButtons" destination="FkU-uM-7hy" collectionClass="NSMutableArray" id="XlB-ie-VrS"/>
+                        <outletCollection property="colorButtons" destination="WRA-hP-Bbs" collectionClass="NSMutableArray" id="f3K-Ux-ezv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQZ-kR-obb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

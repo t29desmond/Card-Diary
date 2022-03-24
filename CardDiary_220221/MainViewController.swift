@@ -9,13 +9,17 @@ import UIKit
 
 class MainViewController: UIViewController, SaveColorDelegate {
 
+  func selectedColor(mainCardColor: UIColor) {
+    self.cardVIew.backgroundColor = mainCardColor
+    }
+
   @IBOutlet weak var cardVIew: UIView!
   @IBOutlet weak var ellipsisBtn: UIButton!
   @IBOutlet weak var mainCustomViewLbl: CustomView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    cardVIew.backgroundColor = .black
+    cardVIew.backgroundColor = .red
     view.backgroundColor = .darkGray
 
     mainCustomViewLbl.mainMonthNum.text = "16"
@@ -29,8 +33,6 @@ class MainViewController: UIViewController, SaveColorDelegate {
     }
   }
 
-  func selectedColor(mainCardColor: UIColor) {
-    self.cardVIew.backgroundColor = mainCardColor
-    }
+
   }
 
