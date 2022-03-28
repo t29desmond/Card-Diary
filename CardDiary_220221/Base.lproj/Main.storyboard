@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,70 +17,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7g-Vg-InB" userLabel="CardVIew">
-                                <rect key="frame" x="62" y="257.5" width="290" height="435"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3r-js-cut" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="40" width="140" height="105"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2du-F6-zk8">
-                                        <rect key="frame" x="12" y="50" width="266" height="285"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WkI-Eo-3Ms">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="39p-BO-CAy">
+                                    <size key="itemSize" width="128" height="0.0"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainCell" id="IlB-mU-jaT" customClass="MainCollectionViewCell" customModule="CardDiary_220221" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="87" width="375" height="600"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cM5-A6-Lf2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nc-Oa-MYT">
+                                                    <rect key="frame" x="12" y="12" width="351" height="576"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-M0-aCu">
+                                                            <rect key="frame" x="287" y="525" width="44" height="31"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
+                                                            <connections>
+                                                                <segue destination="W6D-YV-OMh" kind="presentation" id="XiA-L9-82c"/>
+                                                            </connections>
+                                                        </button>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJ3-Jj-viH" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
+                                                            <rect key="frame" x="25" y="43" width="168" height="163"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvD-Le-sdy">
+                                                            <rect key="frame" x="142" y="273" width="67" height="31"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                            <connections>
+                                                                <segue destination="nU8-4O-89p" kind="show" id="zjX-zd-HVI"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="351" id="2qE-FE-5Xn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="yxS-M0-aCu" secondAttribute="bottom" constant="20" id="3S5-HT-Tdb"/>
+                                                        <constraint firstAttribute="height" constant="576" id="4lt-64-IhL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yxS-M0-aCu" secondAttribute="trailing" constant="20" id="Icj-1g-ehN"/>
+                                                        <constraint firstItem="yxS-M0-aCu" firstAttribute="leading" relation="lessThanOrEqual" secondItem="3Nc-Oa-MYT" secondAttribute="leading" constant="287" id="vcj-dg-xX8"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="3Nc-Oa-MYT" secondAttribute="trailing" constant="12" id="FSi-ph-JzC"/>
+                                                <constraint firstItem="3Nc-Oa-MYT" firstAttribute="top" secondItem="cM5-A6-Lf2" secondAttribute="top" constant="12" id="PTe-Ir-ggY"/>
+                                                <constraint firstAttribute="bottom" secondItem="3Nc-Oa-MYT" secondAttribute="bottom" constant="12" id="V6h-8e-QqP"/>
+                                                <constraint firstItem="3Nc-Oa-MYT" firstAttribute="leading" secondItem="cM5-A6-Lf2" secondAttribute="leading" constant="12" id="fDS-FZ-ZOM"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="375" height="600"/>
                                         <connections>
-                                            <segue destination="nU8-4O-89p" kind="show" id="2fO-77-fNa"/>
+                                            <outlet property="cardView" destination="3Nc-Oa-MYT" id="ATH-xM-TQT"/>
+                                            <outlet property="ellipsisBtn" destination="yxS-M0-aCu" id="YAp-Pe-dGa"/>
+                                            <outlet property="mainCustomViewLbl" destination="KJ3-Jj-viH" id="D1Y-ex-4Hu"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1T-aj-d4J">
-                                        <rect key="frame" x="230" y="386.5" width="37" height="24.5"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system" buttonSize="small"/>
-                                        <connections>
-                                            <segue destination="W6D-YV-OMh" kind="presentation" id="60Y-1o-xjp"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B1T-aj-d4J" secondAttribute="trailing" constant="20" symbolic="YES" id="2EY-KR-tNo"/>
-                                    <constraint firstAttribute="bottom" secondItem="2du-F6-zk8" secondAttribute="bottom" constant="100" id="7Qd-Kx-eEw"/>
-                                    <constraint firstAttribute="bottom" secondItem="B1T-aj-d4J" secondAttribute="bottom" constant="24" id="9OD-gM-alE"/>
-                                    <constraint firstItem="B1T-aj-d4J" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="230" id="H8j-z0-GgW"/>
-                                    <constraint firstAttribute="trailing" secondItem="e3r-js-cut" secondAttribute="trailing" constant="150" id="UvX-11-phf"/>
-                                    <constraint firstAttribute="width" secondItem="N7g-Vg-InB" secondAttribute="height" multiplier="1:1.5" id="ZiB-oz-hy5"/>
-                                    <constraint firstItem="2du-F6-zk8" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" constant="12" id="aGH-uX-QP3"/>
-                                    <constraint firstItem="e3r-js-cut" firstAttribute="leading" secondItem="N7g-Vg-InB" secondAttribute="leading" id="g5J-QQ-ZTD"/>
-                                    <constraint firstItem="e3r-js-cut" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="40" id="j9J-oy-ADW"/>
-                                    <constraint firstAttribute="bottom" secondItem="e3r-js-cut" secondAttribute="bottom" constant="290" id="jih-u3-EA1"/>
-                                    <constraint firstAttribute="trailing" secondItem="2du-F6-zk8" secondAttribute="trailing" constant="12" id="lYl-Hb-5G3"/>
-                                    <constraint firstItem="2du-F6-zk8" firstAttribute="top" secondItem="N7g-Vg-InB" secondAttribute="top" constant="50" id="w2M-P2-AJ1"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="oqr-eE-sVF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="P50-Gu-pLf"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="N7g-Vg-InB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0qS-ar-hbY"/>
-                            <constraint firstItem="N7g-Vg-InB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="5Hm-fV-X2t"/>
-                            <constraint firstItem="N7g-Vg-InB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="D7y-g7-rpO"/>
+                            <constraint firstItem="WkI-Eo-3Ms" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7tP-H6-RbR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WkI-Eo-3Ms" secondAttribute="trailing" id="Ilx-tN-FLs"/>
+                            <constraint firstItem="WkI-Eo-3Ms" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WLq-oB-owh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WkI-Eo-3Ms" secondAttribute="bottom" id="ce3-6h-3wx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SdR-S3-1tH"/>
-                    <connections>
-                        <outlet property="cardVIew" destination="N7g-Vg-InB" id="x0y-dW-NN8"/>
-                        <outlet property="ellipsisBtn" destination="B1T-aj-d4J" id="t3r-6Z-MTV"/>
-                        <outlet property="mainCustomViewLbl" destination="e3r-js-cut" id="lGK-k8-Wzc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="84"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="83.705357142857139"/>
         </scene>
         <!--Half Modal View Controller-->
         <scene sceneID="fX0-tp-ryU">
@@ -382,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdL-1k-XRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="84"/>
+            <point key="canvasLocation" x="752" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vSW-WS-gGM">

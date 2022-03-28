@@ -44,7 +44,8 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
     colorLb.textColor = .white
     colorLb.font = .systemFont(ofSize: 20)
 
-    // enumerated() array값에 enumerated()함수를 사용 -> (index, value) 튜플 형식으로 구현된 리스트형이 리턴
+    // enumerated(): array값에 enumerated()함수를 사용 -> (index, value) 튜플 형식으로 구현된 리스트형이 리턴
+    // forEach : 반복 실행하려는 코드를 파라미터로 받고, 저장된 요소는 클로저 상수로 전달
     colorButtons.enumerated().forEach { (offset: Int, button: UIButton) in
      settingColorAndCycle(button: button, color: colors[offset])
     }
