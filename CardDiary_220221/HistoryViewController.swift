@@ -7,8 +7,9 @@
 
 import UIKit
 
-class HistoryViewController:
-  UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HistoryViewController: UIViewController,
+                             UICollectionViewDelegate,
+                             UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)
   -> Int {
         return 5

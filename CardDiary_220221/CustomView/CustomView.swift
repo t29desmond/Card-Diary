@@ -40,10 +40,10 @@ class CustomView: UIView {
         addSubview(view)
         
         mainMonthNum.font = mainMonthNum.font.withSize(30)
-        mainMonthNum.text = "3"
-        mainMonthText.text = "MAR"
+        mainMonthNum.text = "29"
+        mainMonthText.text = "TWU"
         mainMonthNum.font = mainMonthNum.font.withSize(24)
-        mainMonthText.font = mainMonthText.font.withSize(10)
+        mainMonthText.font = mainMonthText.font.withSize(11)
         
     }
     

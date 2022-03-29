@@ -11,6 +11,9 @@ class MainViewController: UIViewController,
                           UICollectionViewDelegate,
                           UICollectionViewDataSource,
                           SaveColorDelegate {
+
+  @IBOutlet weak var collectionView: UICollectionView!
+
   func selectedColor(mainCardColor: UIColor) {
   }
 
@@ -27,27 +30,18 @@ class MainViewController: UIViewController,
     return mainCell
   }
 
-  
-//  func selectedColor(mainCardColor: UIColor) {
-//    self.cardView.backgroundColor = mainCardColor
-//  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
-//    cardView.backgroundColor = .red
     view.backgroundColor = .darkGray
+    collectionView.backgroundColor = UIColor.darkGray
     
-//    mainCustomViewLbl.mainMonthNum.text = "16"
-//    mainCustomViewLbl.mainMonthNum.font = mainCustomViewLbl.mainMonthNum.font.withSize(46)
-//    mainCustomViewLbl.mainMonthText.text = "MON"
-//    mainCustomViewLbl.mainMonthText.font = mainCustomViewLbl.mainMonthText.font.withSize(20)
   }
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let HalfModalViewController = segue.destination as? HalfModalViewController {
       HalfModalViewController.deleagte = self
     }
   }
-  
   
 }
 
