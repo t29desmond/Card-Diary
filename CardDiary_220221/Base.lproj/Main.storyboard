@@ -37,6 +37,17 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-9i-gzJ">
                                                     <rect key="frame" x="83" y="164.5" width="249" height="373.5"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-vB-ReD" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="113" height="173.5"/>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHC-to-jWH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="373.5"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain"/>
+                                                            <connections>
+                                                                <segue destination="nU8-4O-89p" kind="show" id="6x5-V0-AHA"/>
+                                                            </connections>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-AB-Vow">
                                                             <rect key="frame" x="193.5" y="322.5" width="43.5" height="31"/>
                                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,32 +57,20 @@
                                                                 <segue destination="W6D-YV-OMh" kind="presentation" id="0hs-dN-Mwh"/>
                                                             </connections>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-vB-ReD" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="113" height="173.5"/>
-                                                        </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHC-to-jWH">
-                                                            <rect key="frame" x="12" y="12" width="225" height="281.5"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain"/>
-                                                            <connections>
-                                                                <segue destination="nU8-4O-89p" kind="show" id="6x5-V0-AHA"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="kvv-vB-ReD" secondAttribute="bottom" constant="200" id="0Od-c2-GBG"/>
                                                         <constraint firstAttribute="width" secondItem="TeA-9i-gzJ" secondAttribute="height" multiplier="1:1.5" id="8qO-q3-Cx7"/>
                                                         <constraint firstAttribute="trailing" secondItem="bgt-AB-Vow" secondAttribute="trailing" constant="12" id="AJC-jc-4Cg"/>
-                                                        <constraint firstItem="CHC-to-jWH" firstAttribute="top" secondItem="TeA-9i-gzJ" secondAttribute="top" constant="12" id="BvQ-oD-SvM"/>
-                                                        <constraint firstItem="CHC-to-jWH" firstAttribute="leading" secondItem="TeA-9i-gzJ" secondAttribute="leading" constant="12" id="EEK-UY-GSt"/>
+                                                        <constraint firstItem="CHC-to-jWH" firstAttribute="top" secondItem="TeA-9i-gzJ" secondAttribute="top" id="BvQ-oD-SvM"/>
+                                                        <constraint firstItem="CHC-to-jWH" firstAttribute="leading" secondItem="TeA-9i-gzJ" secondAttribute="leading" id="EEK-UY-GSt"/>
                                                         <constraint firstAttribute="trailing" secondItem="kvv-vB-ReD" secondAttribute="trailing" constant="136" id="EO1-T9-21G"/>
-                                                        <constraint firstItem="bgt-AB-Vow" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TeA-9i-gzJ" secondAttribute="leading" constant="20" symbolic="YES" id="EcZ-cO-Zd3"/>
                                                         <constraint firstItem="kvv-vB-ReD" firstAttribute="leading" secondItem="TeA-9i-gzJ" secondAttribute="leading" id="Q5d-YF-JEh"/>
-                                                        <constraint firstAttribute="bottom" secondItem="CHC-to-jWH" secondAttribute="bottom" constant="80" id="Zqz-u0-iF1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CHC-to-jWH" secondAttribute="bottom" id="Zqz-u0-iF1"/>
                                                         <constraint firstAttribute="bottom" secondItem="bgt-AB-Vow" secondAttribute="bottom" constant="20" id="aJ3-Vy-lCF"/>
                                                         <constraint firstItem="kvv-vB-ReD" firstAttribute="top" secondItem="TeA-9i-gzJ" secondAttribute="top" id="eoN-dN-cFu"/>
-                                                        <constraint firstAttribute="trailing" secondItem="CHC-to-jWH" secondAttribute="trailing" constant="12" id="gy4-v2-1ic"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CHC-to-jWH" secondAttribute="trailing" id="gy4-v2-1ic"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
