@@ -14,33 +14,41 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="UX7-eF-ZL1">
-            <rect key="frame" x="0.0" y="0.0" width="56" height="152"/>
+            <rect key="frame" x="0.0" y="0.0" width="65" height="159"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="agB-AF-4Nj">
-                    <rect key="frame" x="10" y="36" width="36.5" height="80.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="agB-AF-4Nj">
+                    <rect key="frame" x="6.5" y="37.5" width="52" height="84.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gD-mS-g2b">
-                            <rect key="frame" x="0.0" y="0.0" width="36.5" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="52" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="52" id="1M6-9A-B7l"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="MAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-pJ-51N">
-                            <rect key="frame" x="0.0" y="60" width="36.5" height="20.5"/>
+                            <rect key="frame" x="0.0" y="64" width="52" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="ScD-pJ-51N" firstAttribute="width" secondItem="0gD-mS-g2b" secondAttribute="width" id="0P3-Oj-U4D"/>
+                        <constraint firstItem="ScD-pJ-51N" firstAttribute="leading" secondItem="0gD-mS-g2b" secondAttribute="leading" id="EKX-bM-7Wi"/>
+                        <constraint firstItem="ScD-pJ-51N" firstAttribute="trailing" secondItem="0gD-mS-g2b" secondAttribute="trailing" id="JgK-Xa-Q5R"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <constraints>
-                <constraint firstItem="agB-AF-4Nj" firstAttribute="centerX" secondItem="UX7-eF-ZL1" secondAttribute="centerX" id="NMo-Io-UXG"/>
-                <constraint firstItem="agB-AF-4Nj" firstAttribute="centerY" secondItem="UX7-eF-ZL1" secondAttribute="centerY" id="qnL-F6-ZLY"/>
+                <constraint firstItem="agB-AF-4Nj" firstAttribute="centerX" secondItem="UX7-eF-ZL1" secondAttribute="centerX" id="CNH-nv-AwC"/>
+                <constraint firstItem="agB-AF-4Nj" firstAttribute="centerY" secondItem="UX7-eF-ZL1" secondAttribute="centerY" id="Xyt-Ee-ZZs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="904.34782608695662" y="491.51785714285711"/>
+            <point key="canvasLocation" x="932.60869565217399" y="431.58482142857139"/>
         </view>
     </objects>
 </document>

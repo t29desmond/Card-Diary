@@ -24,10 +24,10 @@ class MainCollectionViewCell: UICollectionViewCell, SaveColorDelegate {
 
     cardView.backgroundColor = .blue
     ellipsisBtn.tintColor = .white
-    cardView.layer.cornerRadius = 32
+    cardView.layer.cornerRadius = 38
 
     mainCustomViewLbl.mainMonthNum.text = "3"
-    mainCustomViewLbl.mainMonthNum.font = mainCustomViewLbl.mainMonthNum.font.withSize(50)
+    mainCustomViewLbl.mainMonthNum.font = mainCustomViewLbl.mainMonthNum.font.withSize(60)
     mainCustomViewLbl.mainMonthText.text = "MAR"
     mainCustomViewLbl.mainMonthText.font = mainCustomViewLbl.mainMonthText.font.withSize(22)
   }
