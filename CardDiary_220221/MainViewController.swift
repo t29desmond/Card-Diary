@@ -12,10 +12,13 @@ class MainViewController: UIViewController,
                           UICollectionViewDataSource,
                           SaveColorDelegate {
 
-  @IBOutlet weak var collectionView: UICollectionView!
-
   func selectedColor(mainCardColor: UIColor) {
+    self.view.backgroundColor = mainCardColor
+    self.collectionView.backgroundColor = mainCardColor
   }
+
+
+  @IBOutlet weak var collectionView: UICollectionView!
 
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int)-> Int {
@@ -34,7 +37,6 @@ class MainViewController: UIViewController,
     super.viewDidLoad()
     view.backgroundColor = .darkGray
     collectionView.backgroundColor = UIColor.darkGray
-    
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

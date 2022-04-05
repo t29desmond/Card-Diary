@@ -7,29 +7,27 @@
 
 import UIKit
 
-class MainCollectionViewCell: UICollectionViewCell, SaveColorDelegate {
-  @IBOutlet weak var cardView: UIView!
+class MainCollectionViewCell: UICollectionViewCell {
+
   @IBOutlet weak var ellipsisBtn: UIButton!
   @IBOutlet weak var mainCustomViewLbl: CustomView!
-  
+  @IBOutlet weak var cardView: UIView!
 
-  func selectedColor(mainCardColor: UIColor) {
-    self.cardView.backgroundColor = mainCardColor
-  }
 
-  // awakeFormNib() -> ??
   override func awakeFromNib() {
+
     self.backgroundColor = .darkGray
     self.contentView.backgroundColor = .darkGray
 
-    cardView.backgroundColor = .blue
-    ellipsisBtn.tintColor = .white
+    cardView.backgroundColor = .black
     cardView.layer.cornerRadius = 38
+    ellipsisBtn.tintColor = .white
 
-    mainCustomViewLbl.mainMonthNum.text = "3"
+    mainCustomViewLbl.mainMonthNum.text = "4"
     mainCustomViewLbl.mainMonthNum.font = mainCustomViewLbl.mainMonthNum.font.withSize(60)
-    mainCustomViewLbl.mainMonthText.text = "MAR"
+    mainCustomViewLbl.mainMonthText.text = "Apr"
     mainCustomViewLbl.mainMonthText.font = mainCustomViewLbl.mainMonthText.font.withSize(22)
   }
-  
 }
+
+
