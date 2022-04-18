@@ -7,22 +7,37 @@
 
 import UIKit
 
+/*
+ 선택한 셀의 배경색을 변경한다.
+
+ (1) 선택한 셀의
+ a. 선택한 셀이 몇 번째 셀 인지 알기
+ b. 선택한 셀의 배경색을
+ (2) 배경색을 변경한다.
+ a.HalfModalVC를 MainVC에 전달한다.
+ b.
+ */
+
 class MainViewController: UIViewController,
                           UICollectionViewDelegate,
                           UICollectionViewDataSource,
                           SaveColorDelegate {
 
+
   func selectedColor(mainCardColor: UIColor) {
-    self.view.backgroundColor = mainCardColor
-  
   }
 
   @IBOutlet weak var collectionView: UICollectionView!
 
+  var cardColor : [UIColor] = [.red, .red, .red, .red, .red, .red, .red, .red, .red, .red, .red, .red]
+  var selectedCell: Int?
+
+
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int)-> Int {
-    return 12
+    return cardColor.count
   }
+
 
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -30,12 +45,10 @@ class MainViewController: UIViewController,
                                                         for: indexPath)
             as? MainCollectionViewCell else { return MainCollectionViewCell() }
 
+    cell.backgroundColor = cardColor[indexPath.item] // 셀 색상 지정
+    print("cell : \(indexPath.item)") // view에 보이는 cell의 순서
 
-    cell.backgroundColor = .brown
-    cell.numindex = indexPath.item
-    cell.cellIndexNum()
 
-    
     return cell
   }
 
@@ -43,13 +56,16 @@ class MainViewController: UIViewController,
     super.viewDidLoad()
   }
 
+
   @IBAction func ellipsisBtn(_ sender: UIButton) {
     guard let viewController = storyboard?
-      .instantiateViewController(withIdentifier: "HalfModalViewController")
+            .instantiateViewController(withIdentifier: "HalfModalViewController")
             as? HalfModalViewController else { return }
-    //     화면전환 할 인스턴스를 넘겨준다. = viewController
     viewController.deleagte = self
     present(viewController, animated: true, completion: nil)
   }
 }
+
+
+
 
