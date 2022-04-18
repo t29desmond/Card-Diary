@@ -17,6 +17,7 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
   @IBOutlet var colorButtons: [UIButton]!
 
   weak var deleagte: SaveColorDelegate?
+
   var clickBtn: UIColor = .black
 
   var sheetPresentatioinController: UISheetPresentationController {
@@ -56,7 +57,6 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
   }
 
   @IBAction func tapColorBtn(_ sender: UIButton) {
-
     if sender == colorButtons[0] {
       self.colorButtons[0].setImage(UIImage(systemName: "checkmark"),
                                     for: .normal)
@@ -153,9 +153,10 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
       self.colorButtons[11].layer.borderColor = UIColor.white.cgColor
       self.clickBtn = .lightGray
     }
-    // 이거 위치에 따라 적용 되고 안되고 바뀜 ㅡㅡ 저번이랑 같은 문제 발견
+
     self.deleagte?.selectedColor(mainCardColor: self.clickBtn)
     self.dismiss(animated: true, completion: nil)
+
   }
 
   private func settingColorAndCycle(button: UIButton, color: UIColor) {

@@ -13,8 +13,7 @@ class CustomView: UIView {
     
     @IBOutlet weak var mainMonthNum: UILabel!
     @IBOutlet weak var mainMonthText: UILabel!
-    
-    
+
     override init(frame: CGRect) {
          super.init(frame: frame)
          xibSetup()

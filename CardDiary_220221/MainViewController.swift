@@ -14,9 +14,8 @@ class MainViewController: UIViewController,
 
   func selectedColor(mainCardColor: UIColor) {
     self.view.backgroundColor = mainCardColor
-    self.collectionView.backgroundColor = mainCardColor
+  
   }
-
 
   @IBOutlet weak var collectionView: UICollectionView!
 
@@ -27,23 +26,30 @@ class MainViewController: UIViewController,
 
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let mainCell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell",
-                                                            for: indexPath)
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
+                                                        for: indexPath)
             as? MainCollectionViewCell else { return MainCollectionViewCell() }
-    return mainCell
+
+
+    cell.backgroundColor = .brown
+    cell.numindex = indexPath.item
+    cell.cellIndexNum()
+
+    
+    return cell
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .darkGray
-    collectionView.backgroundColor = UIColor.darkGray
   }
 
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let HalfModalViewController = segue.destination as? HalfModalViewController {
-      HalfModalViewController.deleagte = self
-    }
+  @IBAction func ellipsisBtn(_ sender: UIButton) {
+    guard let viewController = storyboard?
+      .instantiateViewController(withIdentifier: "HalfModalViewController")
+            as? HalfModalViewController else { return }
+    //     화면전환 할 인스턴스를 넘겨준다. = viewController
+    viewController.deleagte = self
+    present(viewController, animated: true, completion: nil)
   }
-  
 }
 
