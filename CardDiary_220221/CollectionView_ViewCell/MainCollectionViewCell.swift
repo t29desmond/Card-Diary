@@ -8,19 +8,15 @@
 import UIKit
 
 
-class MainCollectionViewCell: UICollectionViewCell, SaveColorDelegate {
-
-  func selectedColor(mainCardColor: UIColor) {
-
-  }
+class MainCollectionViewCell: UICollectionViewCell {
 
 
   @IBOutlet weak var ellipsisBtn: UIButton!
   @IBOutlet weak var mainCustomViewLbl: CustomView!
   @IBOutlet weak var cardView: UIView!
 
-  var cardColorView: UIColor = .red
-  var numindex: Int = 0
+  var cellitemNum: Int?
+  var ellipsisNum: Int?
 
   override func awakeFromNib() {
 
@@ -34,7 +30,8 @@ class MainCollectionViewCell: UICollectionViewCell, SaveColorDelegate {
   }
 
   func cellIndexNum() {
-    print("\(numindex) numindex")
+    print("\(cellitemNum!) numindex")
+    print("\(ellipsisNum!) numindex")
   }
 
 }
