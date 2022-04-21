@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WDW-Ex-del">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WDW-Ex-del">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -55,7 +55,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system" title=""/>
                                                             <connections>
-                                                                <action selector="ellipsisBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PzM-d0-lIA"/>
+                                                                <action selector="ellipsisBtn:" destination="5ct-zU-1Vh" eventType="touchUpInside" id="HBu-Ec-vdI"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -87,7 +87,7 @@
                                         <connections>
                                             <outlet property="cardView" destination="TeA-9i-gzJ" id="bHj-xM-R0Y"/>
                                             <outlet property="contentView" destination="3fs-dh-pQp" id="imk-cg-aL8"/>
-                                            <outlet property="ellipsisBtn" destination="bgt-AB-Vow" id="fh8-nQ-2X9"/>
+                                            <outlet property="ellipsisBtn" destination="bgt-AB-Vow" id="gYq-N8-FlM"/>
                                             <outlet property="mainCustomViewLbl" destination="kvv-vB-ReD" id="TuB-Mr-yhk"/>
                                         </connections>
                                     </collectionViewCell>
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQZ-kR-obb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="462"/>
+            <point key="canvasLocation" x="-20" y="756"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="hh3-B4-Tb8">
@@ -417,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdL-1k-XRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="81"/>
+            <point key="canvasLocation" x="772" y="95"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vSW-WS-gGM">

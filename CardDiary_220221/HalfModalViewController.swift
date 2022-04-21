@@ -24,18 +24,8 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
     presentationController as! UISheetPresentationController
   }
 
-  private var colors: [UIColor] = [ .red,
-                                    .orange,
-                                    .green,
-                                    .blue,
-                                    .systemPink,
-                                    .yellow,
-                                    .cyan,
-                                    .purple,
-                                    .brown,
-                                    .black,
-                                    .magenta,
-                                    .lightGray ]
+  private var colors: [UIColor] = [ .red, .orange, .green, .blue, .systemPink, .yellow,
+                                    .cyan, .purple, .brown,.black,.magenta, .lightGray ]
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,8 +39,7 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
       settingColorAndCycle(button: button, color: colors[offset])
     }
 
-    // Half Modal
-    sheetPresentatioinController.delegate = self
+    sheetPresentatioinController.delegate = self  // Half Modal
     sheetPresentatioinController.selectedDetentIdentifier = .medium
     sheetPresentatioinController.prefersGrabberVisible = true
     sheetPresentatioinController.detents = [ .medium() ]
@@ -158,7 +147,6 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
     self.dismiss(animated: true, completion: nil)
 
   }
-
   private func settingColorAndCycle(button: UIButton, color: UIColor) {
     button.layer.cornerRadius = button.bounds.width * 0.5
     button.backgroundColor = color
