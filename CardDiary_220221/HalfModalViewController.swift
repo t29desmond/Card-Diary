@@ -138,7 +138,7 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
       self.colorButtons[11].setImage(UIImage(systemName: "checkmark"),
                                      for: .normal)
       self.colorButtons[11].tintColor = .white
-      self.colorButtons[1].layer.borderWidth = 2
+      self.colorButtons[11].layer.borderWidth = 2
       self.colorButtons[11].layer.borderColor = UIColor.white.cgColor
       self.clickBtn = .lightGray
     }
@@ -151,6 +151,5 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
     button.layer.cornerRadius = button.bounds.width * 0.5
     button.backgroundColor = color
   }
-
 }
 
