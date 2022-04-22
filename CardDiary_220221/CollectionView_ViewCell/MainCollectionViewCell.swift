@@ -6,20 +6,17 @@
 
 import UIKit
 
-protocol CellDelegate: AnyObject {
-  func cellDelegate()
+protocol MainCollectionViewCellDelegate: AnyObject {
+  func mainCollectionViewCellDidTouchButton(_ cell: MainCollectionViewCell)
 }
 
 class MainCollectionViewCell: UICollectionViewCell {
 
-  var delegate: CellDelegate?
+  weak var delegate: MainCollectionViewCellDelegate?
 
   @IBOutlet weak var mainCustomViewLbl: CustomView!
   @IBOutlet weak var cardView: UIView!
   @IBOutlet weak var ellipsisBtn: UIButton!
-
-  var cellitemNum: Int!
-  var ellipsisNum: Int!
 
   override func awakeFromNib() {
 
@@ -32,13 +29,8 @@ class MainCollectionViewCell: UICollectionViewCell {
     mainCustomViewLbl.mainMonthText.font = mainCustomViewLbl.mainMonthText.font.withSize(22)
   }
 
-  func cellIndexNum() {
-    print("\(cellitemNum!) numindex")
-  }
 
   @IBAction func ellipsisBtn(_ sender: UIButton) {
-    self.delegate?.cellDelegate()
+    self.delegate?.mainCollectionViewCellDidTouchButton(self)
   }
 }
-
-

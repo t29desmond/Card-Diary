@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol SaveColorDelegate : AnyObject {
-  func selectedColor(mainCardColor : UIColor)
+// 말하는 주체가 { 말하는 방식 }
+protocol HalfModalViewControllerDelegate : AnyObject {
+  func halfmodal(_ modal: HalfModalViewController, didSelectColor color: UIColor)
 }
 
 class HalfModalViewController: UIViewController, UISheetPresentationControllerDelegate {
@@ -16,7 +17,7 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
   @IBOutlet weak var colorLb: UILabel!
   @IBOutlet var colorButtons: [UIButton]!
 
-  weak var deleagte: SaveColorDelegate?
+  weak var deleagte: HalfModalViewControllerDelegate?
 
   var clickBtn: UIColor = .black
 
@@ -143,10 +144,9 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
       self.clickBtn = .lightGray
     }
 
-    self.deleagte?.selectedColor(mainCardColor: self.clickBtn)
-    self.dismiss(animated: true, completion: nil)
-
+    self.deleagte?.halfmodal(self, didSelectColor: self.clickBtn)
   }
+
   private func settingColorAndCycle(button: UIButton, color: UIColor) {
     button.layer.cornerRadius = button.bounds.width * 0.5
     button.backgroundColor = color
