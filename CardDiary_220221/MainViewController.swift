@@ -11,59 +11,81 @@ class MainViewController: UIViewController, UICollectionViewDelegate,
 
   @IBOutlet weak var collectionView: UICollectionView!
 
-  var indexPoint: IndexPath?
+  var mounthNum: [String] =  [ "1", "2", "3", "4", "5", "6",
+                                "7", "8", "9","10","11", "12"]
 
-  var cardColor : [UIColor] = [ .lightGray, .lightGray, .lightGray, .lightGray, .lightGray ,
-                                .lightGray , .lightGray , .lightGray , .lightGray ,
-                                .lightGray , .lightGray , .lightGray ]
+  var mounthText: [String] =  [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                "Jul", "Aug", "Sep","Oct","Nov", "Dec"]
+
+  var cardColor : [UIColor] = [ .lightGray, .lightGray, .lightGray, .lightGray, .lightGray,
+                                .lightGray, .lightGray, .lightGray, .lightGray , .lightGray,
+                                .lightGray, .lightGray ]
+
+  var indexPoint: IndexPath?
 
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return cardColor.count // 반환되는 요소는 cardColor.count -> count 프로퍼티는 총 갯수를 알려줌
+    return cardColor.count
 
   }
+
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
+    
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                                         for: indexPath)
             as? MainCollectionViewCell else { return MainCollectionViewCell() }
 
     cell.cardView.backgroundColor = cardColor[indexPath.item]
-    cell.layer.cornerRadius = 38
+    cell.cardView.layer.cornerRadius = 38
+
+    cell.ellipsisBtn.tintColor = .white
+
+    cell.mainCustomViewLbl.mainMonthNum.text = mounthNum[indexPath.item]
+    cell.mainCustomViewLbl.mainMonthNum.font = cell.mainCustomViewLbl.mainMonthNum.font.withSize(60)
+    cell.mainCustomViewLbl.mainMonthText.text = mounthText[indexPath.item]
+    cell.mainCustomViewLbl.mainMonthText.font = cell.mainCustomViewLbl.mainMonthText.font.withSize(22)
+
 
     cell.delegate = self
-    print("Cell item : \(indexPath.item)")
+    print("cell item : \(indexPath.item)")
 
     return cell
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
+    collectionView.backgroundColor = .white
   }
 }
 
 
 extension MainViewController: HalfModalViewControllerDelegate {
-  //2. 선택된 셀을 전달해주면 될 것같은데? -> 선택된 셀을 어떻게 전달해 줄 건데? -> indexPoint = seleteditem
+
   func halfmodal(_ modal: HalfModalViewController, didSelectColor color : UIColor) {
 
-    print("indexPoint selected: \(indexPoint!.item)")
-
-//    let indexPath = IndexPath(item: 0, section: 0)
     let cell = collectionView.cellForItem(at: indexPoint!) as? MainCollectionViewCell
     cell?.cardView.backgroundColor = color
     cardColor[indexPoint!.item] = color
 
+    print("indexPoint selected: \(indexPoint!.item)")
     modal.dismiss(animated: true, completion: nil)
   }
 }
 
 
 extension MainViewController: MainCollectionViewCellDelegate {
-  // 1. indexPath(for:)를 통해 몇 번 째 셀이 선택 되었는지 알아 냄
-  func mainCollectionViewCellDidTouchButton(_ cell: MainCollectionViewCell) {
+  func mainColleciontViewHistorySegueDidTouchButton(_ seguePush: MainCollectionViewCell) {
+    guard let viewController = storyboard?
+      .instantiateViewController(withIdentifier: "HistoryViewController")
+            as? HistoryViewController else { return }
+    self.navigationController?.pushViewController(viewController,
+                                                  animated: true)
+    print(viewController)
+  }
 
+  func mainCollectionViewCellDidTouchButton(_ cell: MainCollectionViewCell) {
     let seleteditem = self.collectionView.indexPath(for: cell)
     indexPoint = seleteditem
     print("item selected: \(seleteditem!.item)")
@@ -71,7 +93,6 @@ extension MainViewController: MainCollectionViewCellDelegate {
     guard let viewController = storyboard?
             .instantiateViewController(withIdentifier: "HalfModalViewController")
             as? HalfModalViewController else { return }
-
     viewController.deleagte = self
 
     self.present(viewController, animated: true, completion: nil)
