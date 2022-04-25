@@ -6,8 +6,6 @@
 //
 
 import UIKit
-// HitstoryCollectionViewCell
-// CellUICollectionViewCell
 
 class HitstoryCollectionViewCell: UICollectionViewCell {
 
@@ -16,6 +14,12 @@ class HitstoryCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var historyCustomViewLbl: CustomView!
 
   override func awakeFromNib() {
+  }
 
+  func setProperty(_ property: HistoryCollectionViewCellProperty) {
+    self.tagText.text = "\(property.tagText)"
+    self.tagView.backgroundColor = property.backgroundColor
+    self.tagView.layer.cornerRadius = 18
   }
 }
+

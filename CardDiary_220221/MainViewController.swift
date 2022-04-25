@@ -13,10 +13,12 @@ struct MainCollectionViewCellProperty {
   var backgroundColor: UIColor
 }
 
-class MainViewController: UIViewController, UICollectionViewDelegate,
+class MainViewController: UIViewController,
+                          UICollectionViewDelegate,
                           UICollectionViewDataSource {
 
   @IBOutlet weak var collectionView: UICollectionView!
+  var indexPoint: IndexPath?
 
   var cellProperties: [MainCollectionViewCellProperty] = [
     MainCollectionViewCellProperty(monthNumber: 1, monthText: "Jan", backgroundColor: .lightGray),
@@ -33,17 +35,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate,
     MainCollectionViewCellProperty(monthNumber: 12, monthText: "Dec", backgroundColor: .lightGray)
   ]
 
-  var indexPoint: IndexPath?
-
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
     return cellProperties.count
-
   }
 
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                                         for: indexPath)
             as? MainCollectionViewCell else { return MainCollectionViewCell() }
@@ -83,9 +81,8 @@ extension MainViewController: MainCollectionViewCellDelegate {
     guard let viewController = storyboard?
       .instantiateViewController(withIdentifier: "HistoryViewController")
             as? HistoryViewController else { return }
-    self.navigationController?.pushViewController(viewController,
-                                                  animated: true)
-    print(viewController)
+
+    self.navigationController?.pushViewController(viewController, animated: true)
   }
 
   func mainCollectionViewCellDidTouchButton(_ cell: MainCollectionViewCell) {

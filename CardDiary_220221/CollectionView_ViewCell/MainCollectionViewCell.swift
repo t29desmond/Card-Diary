@@ -15,10 +15,10 @@ class MainCollectionViewCell: UICollectionViewCell {
 
   weak var delegate: MainCollectionViewCellDelegate?
 
-
   @IBOutlet weak var mainCustomViewLbl: CustomView!
   @IBOutlet weak var cardView: UIView!
   @IBOutlet weak var ellipsisBtn: UIButton!
+  @IBOutlet weak var historySegue: UIButton! //집 가서 볼 것 
 
   override func awakeFromNib() {
   }
@@ -31,12 +31,11 @@ class MainCollectionViewCell: UICollectionViewCell {
     self.delegate?.mainColleciontViewHistorySegueDidTouchButton(self)
   }
 
-
   func setProperty(_ property: MainCollectionViewCellProperty) {
     self.mainCustomViewLbl.mainMonthNum.text = "\(property.monthNumber)"
-    self.mainCustomViewLbl.mainMonthNum.font = UIFont.systemFont(ofSize: 50, weight: .bold)
+    self.mainCustomViewLbl.mainMonthNum.font = UIFont.systemFont(ofSize: 64, weight: .bold)
     self.mainCustomViewLbl.mainMonthText.text = property.monthText
-    self.mainCustomViewLbl.mainMonthText.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+    self.mainCustomViewLbl.mainMonthText.font = UIFont.systemFont(ofSize: 24, weight: .regular)
     self.cardView.backgroundColor = property.backgroundColor
     self.ellipsisBtn.tintColor = .white
     self.cardView.layer.cornerRadius = 38
