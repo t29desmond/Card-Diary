@@ -19,27 +19,20 @@ class HistoryViewController: UIViewController,
 
   @IBOutlet weak var collectionView: UICollectionView!
 
-  var eeeee: [HistoryCollectionViewCellProperty] = []
+  var blank: [HistoryCollectionViewCellProperty] = []
   var cellProperties: [HistoryCollectionViewCellProperty] = [
-    HistoryCollectionViewCellProperty(tagText: "호랑이", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "사자", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "독수리", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "고양이", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "늑대", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "거북이", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "두루미", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "침팬치", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "뱀", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "말", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "부엉이", backgroundColor: .black),
-    HistoryCollectionViewCellProperty(tagText: "고슴도치", backgroundColor: .black),
-
+    HistoryCollectionViewCellProperty(tagText: "빨간 호랑이", backgroundColor: .red),
+    HistoryCollectionViewCellProperty(tagText: "주황 사자", backgroundColor: .orange),
+    HistoryCollectionViewCellProperty(tagText: "노란 독수리", backgroundColor: .yellow),
+    HistoryCollectionViewCellProperty(tagText: "초록 고양이", backgroundColor: .green),
+    HistoryCollectionViewCellProperty(tagText: "파란 늑대", backgroundColor: .blue)
   ]
 
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return cellProperties.count
+    return blank.count
   }
+
 
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,13 +53,20 @@ class HistoryViewController: UIViewController,
     collectionView.backgroundColor = .white
   }
 
-  // 구분지어 생각하기 1.데이터 업데이트 , 2. UI업데이트
   @IBAction func tagAddButton(_ sender: UIButton) {
-//        self.cellProperties.popLast()
-//        self.cellProperties.append(HistoryCollectionViewCellProperty
-//                                    .init(tagText: "고양이", backgroundColor: .black))
-    print(cellProperties.count)
+    blank.append(contentsOf: [cellProperties[0]])
+    if blank.count == 5 {
+      print("마지막 tagViw 입니다.")
+    } else if blank.count == 6 {
+      blank.removeAll()
+    }
+    print("tagView 증가: \(blank.count)")
     collectionView.reloadData()
+  }
 
+  @IBAction func tagDiscardButton(_ sender: UIButton) {
+    guard blank.popLast() != nil else { return }
+    print("tagView 감소: \(self.blank.count)")
+    collectionView.reloadData()
   }
 }

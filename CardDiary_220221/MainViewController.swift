@@ -6,7 +6,6 @@
 
 import UIKit
 
-
 struct MainCollectionViewCellProperty {
   let monthNumber: Int
   let monthText: String
@@ -18,6 +17,7 @@ class MainViewController: UIViewController,
                           UICollectionViewDataSource {
 
   @IBOutlet weak var collectionView: UICollectionView!
+
   var indexPoint: IndexPath?
 
   var cellProperties: [MainCollectionViewCellProperty] = [
@@ -70,7 +70,7 @@ extension MainViewController: HalfModalViewControllerDelegate {
     cell?.cardView.backgroundColor = color
     cellProperties[indexPoint!.item].backgroundColor = color
 
-    print("indexPoint selected: \(indexPoint!.item)")
+    print("indexPoint selected(cell point): \(indexPoint!.item)")
     modal.dismiss(animated: true, completion: nil)
   }
 }
@@ -88,7 +88,7 @@ extension MainViewController: MainCollectionViewCellDelegate {
   func mainCollectionViewCellDidTouchButton(_ cell: MainCollectionViewCell) {
     let seleteditem = self.collectionView.indexPath(for: cell)
     indexPoint = seleteditem
-    print("item selected: \(seleteditem!.item)")
+    print("item selected(Half modal): \(seleteditem!.item)")
 
     guard let viewController = storyboard?
             .instantiateViewController(withIdentifier: "HalfModalViewController")
