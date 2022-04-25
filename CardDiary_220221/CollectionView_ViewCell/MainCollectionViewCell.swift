@@ -32,5 +32,14 @@ class MainCollectionViewCell: UICollectionViewCell {
   }
 
 
+  func setProperty(_ property: MainCollectionViewCellProperty) {
+    self.mainCustomViewLbl.mainMonthNum.text = "\(property.monthNumber)"
+    self.mainCustomViewLbl.mainMonthNum.font = UIFont.systemFont(ofSize: 50, weight: .bold)
+    self.mainCustomViewLbl.mainMonthText.text = property.monthText
+    self.mainCustomViewLbl.mainMonthText.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+    self.cardView.backgroundColor = property.backgroundColor
+    self.ellipsisBtn.tintColor = .white
+    self.cardView.layer.cornerRadius = 38
+  }
 }
 

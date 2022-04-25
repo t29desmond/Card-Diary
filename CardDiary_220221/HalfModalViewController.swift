@@ -31,10 +31,10 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .darkGray
+    view.backgroundColor = .white
     colorLb.text = "Color"
-    colorLb.textColor = .white
-    colorLb.font = .systemFont(ofSize: 20)
+    colorLb.textColor = .black
+    colorLb.font = .systemFont(ofSize: 20, weight: .medium)
 
     colorButtons.enumerated().forEach { (offset: Int, button: UIButton) in
       settingColorAndCycle(button: button, color: colors[offset])

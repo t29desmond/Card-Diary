@@ -6,26 +6,38 @@
 
 import UIKit
 
+
+struct MainCollectionViewCellProperty {
+  let monthNumber: Int
+  let monthText: String
+  var backgroundColor: UIColor
+}
+
 class MainViewController: UIViewController, UICollectionViewDelegate,
                           UICollectionViewDataSource {
 
   @IBOutlet weak var collectionView: UICollectionView!
 
-  var mounthNum: [String] =  [ "1", "2", "3", "4", "5", "6",
-                                "7", "8", "9","10","11", "12"]
-
-  var mounthText: [String] =  [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                                "Jul", "Aug", "Sep","Oct","Nov", "Dec"]
-
-  var cardColor : [UIColor] = [ .lightGray, .lightGray, .lightGray, .lightGray, .lightGray,
-                                .lightGray, .lightGray, .lightGray, .lightGray , .lightGray,
-                                .lightGray, .lightGray ]
+  var cellProperties: [MainCollectionViewCellProperty] = [
+    MainCollectionViewCellProperty(monthNumber: 1, monthText: "Jan", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 2, monthText: "Feb", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 3, monthText: "Mar", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 4, monthText: "Apr", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 5, monthText: "May", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 6, monthText: "Jun", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 7, monthText: "Jul", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 8, monthText: "Aug", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 9, monthText: "Sep", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 10, monthText: "Oct", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 11, monthText: "Nov", backgroundColor: .lightGray),
+    MainCollectionViewCellProperty(monthNumber: 12, monthText: "Dec", backgroundColor: .lightGray)
+  ]
 
   var indexPoint: IndexPath?
 
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return cardColor.count
+    return cellProperties.count
 
   }
 
@@ -36,18 +48,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate,
                                                         for: indexPath)
             as? MainCollectionViewCell else { return MainCollectionViewCell() }
 
-    cell.cardView.backgroundColor = cardColor[indexPath.item]
-    cell.cardView.layer.cornerRadius = 38
-
-    cell.ellipsisBtn.tintColor = .white
-
-    cell.mainCustomViewLbl.mainMonthNum.text = mounthNum[indexPath.item]
-    cell.mainCustomViewLbl.mainMonthNum.font = cell.mainCustomViewLbl.mainMonthNum.font.withSize(60)
-    cell.mainCustomViewLbl.mainMonthText.text = mounthText[indexPath.item]
-    cell.mainCustomViewLbl.mainMonthText.font = cell.mainCustomViewLbl.mainMonthText.font.withSize(22)
-
-
+    let property = cellProperties[indexPath.item]
     cell.delegate = self
+    cell.setProperty(property)
     print("cell item : \(indexPath.item)")
 
     return cell
@@ -67,7 +70,7 @@ extension MainViewController: HalfModalViewControllerDelegate {
 
     let cell = collectionView.cellForItem(at: indexPoint!) as? MainCollectionViewCell
     cell?.cardView.backgroundColor = color
-    cardColor[indexPoint!.item] = color
+    cellProperties[indexPoint!.item].backgroundColor = color
 
     print("indexPoint selected: \(indexPoint!.item)")
     modal.dismiss(animated: true, completion: nil)
