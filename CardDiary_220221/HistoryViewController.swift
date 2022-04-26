@@ -20,11 +20,6 @@ class HistoryViewController: UIViewController,
   @IBOutlet weak var collectionView: UICollectionView!
 
   var cellProperties: [HistoryCollectionViewCellProperty] = [
-//    HistoryCollectionViewCellProperty(tagText: "빨간 호랑이", backgroundColor: .red),
-//    HistoryCollectionViewCellProperty(tagText: "주황 사자", backgroundColor: .orange),
-//    HistoryCollectionViewCellProperty(tagText: "노란 독수리", backgroundColor: .yellow),
-//    HistoryCollectionViewCellProperty(tagText: "초록 고양이", backgroundColor: .green),
-//    HistoryCollectionViewCellProperty(tagText: "파란 늑대", backgroundColor: .blue)
   ]
 
   func collectionView(_ collectionView: UICollectionView,
@@ -58,7 +53,7 @@ class HistoryViewController: UIViewController,
     collectionView.reloadData()
   }
   @IBAction func tagDiscardButton(_ sender: UIButton) {
-    guard let tagView = cellProperties.popLast() else { return }
+    guard cellProperties.popLast() != nil else { return }
       print(cellProperties.count)
       collectionView.reloadData()
   }
