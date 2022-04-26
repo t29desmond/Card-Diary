@@ -19,7 +19,9 @@ class HistoryViewController: UIViewController,
 
   @IBOutlet weak var collectionView: UICollectionView!
 
-  var blank: [HistoryCollectionViewCellProperty] = []
+  //  var blank: [HistoryCollectionViewCellProperty] = []
+
+  var index = 0
   var cellProperties: [HistoryCollectionViewCellProperty] = [
     HistoryCollectionViewCellProperty(tagText: "빨간 호랑이", backgroundColor: .red),
     HistoryCollectionViewCellProperty(tagText: "주황 사자", backgroundColor: .orange),
@@ -28,9 +30,10 @@ class HistoryViewController: UIViewController,
     HistoryCollectionViewCellProperty(tagText: "파란 늑대", backgroundColor: .blue)
   ]
 
+
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return blank.count
+    return index
   }
 
 
@@ -54,19 +57,20 @@ class HistoryViewController: UIViewController,
   }
 
   @IBAction func tagAddButton(_ sender: UIButton) {
-    blank.append(contentsOf: [cellProperties[0]])
-    if blank.count == 5 {
-      print("마지막 tagViw 입니다.")
-    } else if blank.count == 6 {
-      blank.removeAll()
+    index = index + 1
+    if index == 6 {
+      index = 0
+      print(index)
     }
-    print("tagView 증가: \(blank.count)")
     collectionView.reloadData()
   }
 
   @IBAction func tagDiscardButton(_ sender: UIButton) {
-    guard blank.popLast() != nil else { return }
-    print("tagView 감소: \(self.blank.count)")
+    index = index - 1
+    if index == -1 {
+      index = 0
+      print(index)
+    }
     collectionView.reloadData()
   }
 }
