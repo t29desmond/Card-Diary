@@ -19,21 +19,17 @@ class HistoryViewController: UIViewController,
 
   @IBOutlet weak var collectionView: UICollectionView!
 
-  //  var blank: [HistoryCollectionViewCellProperty] = []
-
-  var index = 0
   var cellProperties: [HistoryCollectionViewCellProperty] = [
-    HistoryCollectionViewCellProperty(tagText: "빨간 호랑이", backgroundColor: .red),
-    HistoryCollectionViewCellProperty(tagText: "주황 사자", backgroundColor: .orange),
-    HistoryCollectionViewCellProperty(tagText: "노란 독수리", backgroundColor: .yellow),
-    HistoryCollectionViewCellProperty(tagText: "초록 고양이", backgroundColor: .green),
-    HistoryCollectionViewCellProperty(tagText: "파란 늑대", backgroundColor: .blue)
+//    HistoryCollectionViewCellProperty(tagText: "빨간 호랑이", backgroundColor: .red),
+//    HistoryCollectionViewCellProperty(tagText: "주황 사자", backgroundColor: .orange),
+//    HistoryCollectionViewCellProperty(tagText: "노란 독수리", backgroundColor: .yellow),
+//    HistoryCollectionViewCellProperty(tagText: "초록 고양이", backgroundColor: .green),
+//    HistoryCollectionViewCellProperty(tagText: "파란 늑대", backgroundColor: .blue)
   ]
-
 
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return index
+    return cellProperties.count
   }
 
 
@@ -57,20 +53,13 @@ class HistoryViewController: UIViewController,
   }
 
   @IBAction func tagAddButton(_ sender: UIButton) {
-    index = index + 1
-    if index == 6 {
-      index = 0
-      print(index)
-    }
+    cellProperties.append(HistoryCollectionViewCellProperty.init(tagText: "팀장님 탈출하고싶습니다.", backgroundColor: .blue))
+    print(cellProperties.count)
     collectionView.reloadData()
   }
-
   @IBAction func tagDiscardButton(_ sender: UIButton) {
-    index = index - 1
-    if index == -1 {
-      index = 0
-      print(index)
-    }
-    collectionView.reloadData()
+    guard let tagView = cellProperties.popLast() else { return }
+      print(cellProperties.count)
+      collectionView.reloadData()
   }
 }
