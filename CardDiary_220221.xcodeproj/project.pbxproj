@@ -22,7 +22,8 @@
 		F7C7415427C2A52200079F17 /* CardDiary_220221Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7415327C2A52200079F17 /* CardDiary_220221Tests.swift */; };
 		F7C7415E27C2A52200079F17 /* CardDiary_220221UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7415D27C2A52200079F17 /* CardDiary_220221UITests.swift */; };
 		F7C7416027C2A52200079F17 /* CardDiary_220221UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7415F27C2A52200079F17 /* CardDiary_220221UITestsLaunchTests.swift */; };
-		F7EA3D6F2817E12F001E612B /* writeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA3D6E2817E12F001E612B /* writeViewController.swift */; };
+		F7EA3D6F2817E12F001E612B /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA3D6E2817E12F001E612B /* WriteViewController.swift */; };
+		F7EA3D7328184AA3001E612B /* HistoryCollectionViewCellProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EA3D7228184AA3001E612B /* HistoryCollectionViewCellProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,8 @@
 		F7C7415927C2A52200079F17 /* CardDiary_220221UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardDiary_220221UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C7415D27C2A52200079F17 /* CardDiary_220221UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDiary_220221UITests.swift; sourceTree = "<group>"; };
 		F7C7415F27C2A52200079F17 /* CardDiary_220221UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDiary_220221UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F7EA3D6E2817E12F001E612B /* writeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeViewController.swift; sourceTree = "<group>"; };
+		F7EA3D6E2817E12F001E612B /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		F7EA3D7228184AA3001E612B /* HistoryCollectionViewCellProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCellProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,14 +135,15 @@
 			children = (
 				F7C7414227C2A52100079F17 /* Main.storyboard */,
 				F71F309927D1B4DC0066E4B9 /* MainViewController.swift */,
-				F7C7414027C2A52100079F17 /* HistoryViewController.swift */,
 				F7C54AA027DF8B2C00A838EA /* HalfModalViewController.swift */,
-				F7EA3D6E2817E12F001E612B /* writeViewController.swift */,
+				F7C7414027C2A52100079F17 /* HistoryViewController.swift */,
+				F7EA3D6E2817E12F001E612B /* WriteViewController.swift */,
 				F71F309227D112770066E4B9 /* CustomView */,
 				F71F309427D112C80066E4B9 /* CollectionView_ViewCell */,
 				F7C7413E27C2A52100079F17 /* SceneDelegate.swift */,
 				F7C7414727C2A52200079F17 /* LaunchScreen.storyboard */,
 				F7C7413C27C2A52100079F17 /* AppDelegate.swift */,
+				F7EA3D7228184AA3001E612B /* HistoryCollectionViewCellProperty.swift */,
 				F7C7414527C2A52200079F17 /* Assets.xcassets */,
 				F7C7414A27C2A52200079F17 /* Info.plist */,
 			);
@@ -300,11 +303,12 @@
 				F71F309127D1113B0066E4B9 /* HitstoryCollectionViewCell.swift in Sources */,
 				F7C7414127C2A52100079F17 /* HistoryViewController.swift in Sources */,
 				F749EF0D27F19B9A00D7260F /* MainCollectionViewCell.swift in Sources */,
+				F7EA3D7328184AA3001E612B /* HistoryCollectionViewCellProperty.swift in Sources */,
 				F7B35F8B27CC69EA008E7A9A /* CustomView.swift in Sources */,
 				F7C7413D27C2A52100079F17 /* AppDelegate.swift in Sources */,
 				F7C7413F27C2A52100079F17 /* SceneDelegate.swift in Sources */,
 				F71F309A27D1B4DC0066E4B9 /* MainViewController.swift in Sources */,
-				F7EA3D6F2817E12F001E612B /* writeViewController.swift in Sources */,
+				F7EA3D6F2817E12F001E612B /* WriteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

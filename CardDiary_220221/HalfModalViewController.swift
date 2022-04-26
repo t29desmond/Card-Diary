@@ -7,7 +7,6 @@
 
 import UIKit
 
-// 말하는 주체가 { 말하는 방식 }
 protocol HalfModalViewControllerDelegate : AnyObject {
   func halfmodal(_ modal: HalfModalViewController, didSelectColor color: UIColor)
 }
@@ -26,14 +25,14 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
   }
 
   private var colors: [UIColor] = [ .red, .orange, .green, .blue, .systemPink, .yellow,
-                                    .cyan, .purple, .brown,.black,.magenta, .lightGray ]
+                                    .cyan, .purple, .brown,.magenta, .systemGray2, .systemGray4 ]
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = .white
+    view.backgroundColor = .systemGray5
     colorLb.text = "Color"
-    colorLb.textColor = .black
+    colorLb.textColor = .white
     colorLb.font = .systemFont(ofSize: 20, weight: .medium)
 
     colorButtons.enumerated().forEach { (offset: Int, button: UIButton) in
@@ -125,7 +124,7 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
       self.colorButtons[9].tintColor = .white
       self.colorButtons[9].layer.borderWidth = 2
       self.colorButtons[9].layer.borderColor = UIColor.white.cgColor
-      self.clickBtn = .black
+      self.clickBtn = .magenta
 
     } else if sender == colorButtons[10] {
       colorButtons[10].setImage(UIImage(systemName: "checkmark"),
@@ -133,7 +132,7 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
       self.colorButtons[10].tintColor = .white
       self.colorButtons[10].layer.borderWidth = 2
       self.colorButtons[10].layer.borderColor = UIColor.white.cgColor
-      self.clickBtn = .magenta
+      self.clickBtn = .systemGray2
 
     } else if sender == colorButtons[11] {
       self.colorButtons[11].setImage(UIImage(systemName: "checkmark"),
@@ -141,7 +140,7 @@ class HalfModalViewController: UIViewController, UISheetPresentationControllerDe
       self.colorButtons[11].tintColor = .white
       self.colorButtons[11].layer.borderWidth = 2
       self.colorButtons[11].layer.borderColor = UIColor.white.cgColor
-      self.clickBtn = .lightGray
+      self.clickBtn = .systemGray3
     }
 
     self.deleagte?.halfmodal(self, didSelectColor: self.clickBtn)

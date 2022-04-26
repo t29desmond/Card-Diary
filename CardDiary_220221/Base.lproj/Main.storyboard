@@ -50,10 +50,12 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-AB-Vow">
-                                                            <rect key="frame" x="217" y="338" width="19" height="22"/>
+                                                            <rect key="frame" x="202" y="338" width="24" height="22"/>
                                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="" image="ellipsis" catalog="system"/>
+                                                            <state key="normal" title="" image="ellipsis" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="ellipsisBtn:" destination="5ct-zU-1Vh" eventType="touchUpInside" id="HBu-Ec-vdI"/>
                                                             </connections>
@@ -66,7 +68,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="CHC-to-jWH" secondAttribute="trailing" id="DJT-Os-Sxe"/>
                                                         <constraint firstAttribute="bottom" secondItem="CHC-to-jWH" secondAttribute="bottom" id="H48-bF-ZyV"/>
                                                         <constraint firstAttribute="height" constant="380" id="Ish-hu-8mp"/>
-                                                        <constraint firstAttribute="trailing" secondItem="bgt-AB-Vow" secondAttribute="trailing" constant="24" id="SqQ-p6-OIu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bgt-AB-Vow" secondAttribute="trailing" constant="34" id="SqQ-p6-OIu"/>
                                                         <constraint firstItem="bgt-AB-Vow" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TeA-9i-gzJ" secondAttribute="leading" constant="20" symbolic="YES" id="drZ-iO-0N6"/>
                                                         <constraint firstAttribute="width" constant="260" id="jBf-ic-lOs"/>
                                                         <constraint firstAttribute="bottom" secondItem="kvv-vB-ReD" secondAttribute="bottom" constant="250" id="p6X-F6-OkH"/>
@@ -88,7 +90,6 @@
                                             <outlet property="cardView" destination="TeA-9i-gzJ" id="bHj-xM-R0Y"/>
                                             <outlet property="contentView" destination="3fs-dh-pQp" id="imk-cg-aL8"/>
                                             <outlet property="ellipsisBtn" destination="bgt-AB-Vow" id="gYq-N8-FlM"/>
-                                            <outlet property="historySegue" destination="CHC-to-jWH" id="W1h-X4-uxc"/>
                                             <outlet property="mainCustomViewLbl" destination="kvv-vB-ReD" id="TuB-Mr-yhk"/>
                                         </connections>
                                     </collectionViewCell>
@@ -324,20 +325,23 @@
         <!--Write View Controller-->
         <scene sceneID="5UD-g5-fWx">
             <objects>
-                <viewController id="Vzo-uw-QOH" customClass="writeViewController" customModule="CardDiary_220221" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteViewController" id="Vzo-uw-QOH" customClass="WriteViewController" customModule="CardDiary_220221" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K0X-xX-rKE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="내용을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2SW-1c-AJh">
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="내용을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2SW-1c-AJh">
                                 <rect key="frame" x="100" y="144" width="214" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hh-mA-JnD">
-                                <rect key="frame" x="150" y="198" width="114" height="31"/>
+                                <rect key="frame" x="150" y="198" width="114" height="51"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="저장하기"/>
+                                <buttonConfiguration key="configuration" style="plain" title="save"/>
+                                <connections>
+                                    <action selector="textFieldSaveBtn:" destination="Vzo-uw-QOH" eventType="touchUpInside" id="ie2-wO-75v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B6O-Vd-7RH"/>
@@ -352,10 +356,13 @@
                             <constraint firstItem="8hh-mA-JnD" firstAttribute="top" secondItem="2SW-1c-AJh" secondAttribute="bottom" constant="20" id="dhp-OO-4rO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldLabel" destination="2SW-1c-AJh" id="4nz-j6-ewF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKM-aT-eBV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="321"/>
+            <point key="canvasLocation" x="1170" y="321"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="hh3-B4-Tb8">
@@ -366,7 +373,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JN1-xx-dAw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="31U-8J-YW3">
                                     <size key="itemSize" width="414" height="100"/>
@@ -376,30 +383,30 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="GSg-tr-nNo" customClass="HitstoryCollectionViewCell" customModule="CardDiary_220221" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ovr-KE-X3e">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="935-cY-aQM" userLabel="tag View">
-                                                    <rect key="frame" x="29" y="7.5" width="356" height="91"/>
+                                                    <rect key="frame" x="29" y="7.5" width="356" height="95"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtZ-po-w0R">
-                                                            <rect key="frame" x="74.5" y="25" width="234" height="41"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtZ-po-w0R">
+                                                            <rect key="frame" x="74.5" y="25" width="234" height="45"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lmA-tA-pca" customClass="CustomView" customModule="CardDiary_220221" customModuleProvider="target">
-                                                            <rect key="frame" x="14" y="14" width="26" height="63"/>
+                                                            <rect key="frame" x="14" y="14" width="26" height="67"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="26" id="Rma-ak-oR0"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTV-3S-ePf" userLabel="LineView">
-                                                            <rect key="frame" x="54" y="0.0" width="0.5" height="91"/>
-                                                            <color key="backgroundColor" systemColor="labelColor"/>
+                                                            <rect key="frame" x="54" y="0.0" width="0.5" height="95"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="0.40000000000000002" id="Jkl-6I-20q"/>
                                                             </constraints>
@@ -432,7 +439,7 @@
                                                 <constraint firstItem="935-cY-aQM" firstAttribute="top" secondItem="ovr-KE-X3e" secondAttribute="top" constant="7.5" id="wP1-yz-Bnm"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="106"/>
+                                        <size key="customSize" width="414" height="110"/>
                                         <connections>
                                             <outlet property="historyCustomViewLbl" destination="lmA-tA-pca" id="D0d-Gf-syN"/>
                                             <outlet property="tagText" destination="vtZ-po-w0R" id="TMV-mB-Ay9"/>
@@ -445,20 +452,19 @@
                                     <outlet property="delegate" destination="nU8-4O-89p" id="0ki-K8-gt8"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-qc-Zvb">
-                                <rect key="frame" x="50" y="731" width="314" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-qc-Zvb">
+                                <rect key="frame" x="70" y="731" width="274" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjN-sf-PyF">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Add"/>
                                         <connections>
                                             <action selector="tagAddButton:" destination="nU8-4O-89p" eventType="touchUpInside" id="u1E-Ls-8jH"/>
-                                            <segue destination="Vzo-uw-QOH" kind="presentation" id="pAD-SR-Ttq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fo-sl-OrH">
-                                        <rect key="frame" x="167" y="0.0" width="147" height="31"/>
+                                        <rect key="frame" x="137" y="0.0" width="137" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Discard"/>
                                         <connections>
@@ -480,20 +486,20 @@
                             <constraint firstItem="JN1-xx-dAw" firstAttribute="top" secondItem="dcY-kZ-duc" secondAttribute="top" id="C5f-c7-NhJ"/>
                             <constraint firstItem="dcY-kZ-duc" firstAttribute="trailing" secondItem="JN1-xx-dAw" secondAttribute="trailing" id="NMv-ex-QEd"/>
                             <constraint firstAttribute="bottomMargin" secondItem="wvb-qc-Zvb" secondAttribute="bottom" constant="100" id="O26-wA-NLa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wvb-qc-Zvb" secondAttribute="trailing" constant="30" id="WHI-Xt-tSI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wvb-qc-Zvb" secondAttribute="trailing" constant="50" id="WHI-Xt-tSI"/>
                             <constraint firstItem="dcY-kZ-duc" firstAttribute="bottom" secondItem="JN1-xx-dAw" secondAttribute="bottom" id="Y5B-UV-k0p"/>
-                            <constraint firstItem="wvb-qc-Zvb" firstAttribute="leading" secondItem="qT4-a5-Wo8" secondAttribute="leadingMargin" constant="30" id="Yc6-0q-fpr"/>
+                            <constraint firstItem="wvb-qc-Zvb" firstAttribute="leading" secondItem="qT4-a5-Wo8" secondAttribute="leadingMargin" constant="50" id="Yc6-0q-fpr"/>
                             <constraint firstItem="wvb-qc-Zvb" firstAttribute="centerX" secondItem="qT4-a5-Wo8" secondAttribute="centerX" id="jH1-Mw-E7Y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xpt-z8-yIm"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="JN1-xx-dAw" id="Zo9-jH-tVj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdL-1k-XRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376.81159420289856" y="320.75892857142856"/>
+            <point key="canvasLocation" x="406" y="321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vSW-WS-gGM">
@@ -518,9 +524,6 @@
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

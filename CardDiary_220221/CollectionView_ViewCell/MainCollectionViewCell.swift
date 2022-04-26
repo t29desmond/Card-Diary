@@ -18,7 +18,7 @@ class MainCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var mainCustomViewLbl: CustomView!
   @IBOutlet weak var cardView: UIView!
   @IBOutlet weak var ellipsisBtn: UIButton!
-  @IBOutlet weak var historySegue: UIButton! //집 가서 볼 것 
+
 
   override func awakeFromNib() {
   }
@@ -37,7 +37,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     self.mainCustomViewLbl.mainMonthText.text = property.monthText
     self.mainCustomViewLbl.mainMonthText.font = UIFont.systemFont(ofSize: 24, weight: .regular)
     self.cardView.backgroundColor = property.backgroundColor
-    self.ellipsisBtn.tintColor = .white
+    self.ellipsisBtn.tintColor = .black
     self.cardView.layer.cornerRadius = 38
   }
 }
