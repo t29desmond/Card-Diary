@@ -21,14 +21,17 @@ class WriteViewController: UIViewController, UITextFieldDelegate {
     didSet {
       saveBtn.isEnabled = false
     }
-
   }
+
+
   @IBOutlet weak var textFieldLabel: UITextField!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.textFieldLabel.delegate = self
   }
+
+
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                replacementString string: String) -> Bool {
     if range.location == 0 && range.length != 0 {
@@ -36,7 +39,6 @@ class WriteViewController: UIViewController, UITextFieldDelegate {
       } else {
           self.saveBtn.isEnabled = true
       }
-    print("range: ", range)
     return true
   }
   

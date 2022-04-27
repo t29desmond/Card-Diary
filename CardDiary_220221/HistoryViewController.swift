@@ -12,7 +12,12 @@ class HistoryViewController: UIViewController,
                              UICollectionViewDataSource {
   
   @IBOutlet weak var collectionView: UICollectionView!
-  var cellProperties: [HistoryCollectionViewCellProperty] = []
+
+  private var cellProperties: [HistoryCollectionViewCellProperty] = [] {
+    didSet {
+      self.saveTagText()
+    }
+  }
 
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
@@ -34,6 +39,7 @@ class HistoryViewController: UIViewController,
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    loadTagText()
     view.backgroundColor = .systemGray6
     collectionView.backgroundColor = .systemGray6
 
@@ -52,6 +58,24 @@ class HistoryViewController: UIViewController,
     guard cellProperties.popLast() != nil else { return }
     print("tagView: discard count \(cellProperties.count)")
     self.collectionView.reloadData()
+  }
+  
+  private func saveTagText() {
+    let saveTegText = self.cellProperties.map {
+      [ "tagText": $0.tagtexFiled ]
+    }
+    let userDefaults = UserDefaults.standard
+    userDefaults.set(saveTegText, forKey: "cellProperties")
+  }
+
+  private func loadTagText() {
+    let userDefaults = UserDefaults.standard
+    guard let data = userDefaults.object(forKey: "cellProperties") as? [[String: Any]] else { return }
+    self.cellProperties = data.compactMap {
+      guard let title = $0["tagText"] as? String else { return nil }
+
+      return HistoryCollectionViewCellProperty(tagtexFiled: title)
+    }
   }
 }
 
