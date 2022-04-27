@@ -8,7 +8,7 @@ import UIKit
 
 protocol MainCollectionViewCellDelegate: AnyObject {
   func mainCollectionViewCellDidTouchButton(_ cell: MainCollectionViewCell)
-  func mainColleciontViewHistorySegueDidTouchButton(_ seguePush: MainCollectionViewCell)
+  func mainColleciontViewHistorySegueDidTouchButton(_ cell: MainCollectionViewCell)
 }
 
 class MainCollectionViewCell: UICollectionViewCell {

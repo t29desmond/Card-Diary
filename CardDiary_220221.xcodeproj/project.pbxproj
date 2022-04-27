@@ -10,6 +10,7 @@
 		F71F309127D1113B0066E4B9 /* HitstoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F309027D1113B0066E4B9 /* HitstoryCollectionViewCell.swift */; };
 		F71F309A27D1B4DC0066E4B9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F309927D1B4DC0066E4B9 /* MainViewController.swift */; };
 		F749EF0D27F19B9A00D7260F /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749EF0C27F19B9A00D7260F /* MainCollectionViewCell.swift */; };
+		F7A85CF028190C3900F00127 /* MainCollectionViewCellProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A85CEF28190C3900F00127 /* MainCollectionViewCellProperty.swift */; };
 		F7B35F8B27CC69EA008E7A9A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B35F8A27CC69EA008E7A9A /* CustomView.swift */; };
 		F7B35F8D27CC69F6008E7A9A /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B35F8C27CC69F6008E7A9A /* CustomView.xib */; };
 		F7C54AA127DF8B2C00A838EA /* HalfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C54AA027DF8B2C00A838EA /* HalfModalViewController.swift */; };
@@ -47,6 +48,7 @@
 		F71F309027D1113B0066E4B9 /* HitstoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitstoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F71F309927D1B4DC0066E4B9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F749EF0C27F19B9A00D7260F /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7A85CEF28190C3900F00127 /* MainCollectionViewCellProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCellProperty.swift; sourceTree = "<group>"; };
 		F7B35F8A27CC69EA008E7A9A /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F7B35F8C27CC69F6008E7A9A /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		F7C54AA027DF8B2C00A838EA /* HalfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				F7C7414727C2A52200079F17 /* LaunchScreen.storyboard */,
 				F7C7413C27C2A52100079F17 /* AppDelegate.swift */,
 				F7EA3D7228184AA3001E612B /* HistoryCollectionViewCellProperty.swift */,
+				F7A85CEF28190C3900F00127 /* MainCollectionViewCellProperty.swift */,
 				F7C7414527C2A52200079F17 /* Assets.xcassets */,
 				F7C7414A27C2A52200079F17 /* Info.plist */,
 			);
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A85CF028190C3900F00127 /* MainCollectionViewCellProperty.swift in Sources */,
 				F7C54AA127DF8B2C00A838EA /* HalfModalViewController.swift in Sources */,
 				F71F309127D1113B0066E4B9 /* HitstoryCollectionViewCell.swift in Sources */,
 				F7C7414127C2A52100079F17 /* HistoryViewController.swift in Sources */,

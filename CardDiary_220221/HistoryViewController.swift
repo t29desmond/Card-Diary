@@ -9,18 +9,11 @@ import UIKit
 
 class HistoryViewController: UIViewController,
                              UICollectionViewDelegate,
-                             UICollectionViewDataSource,
-                             WriteViewControllerDelegate {
-  func writeViewControllerSaveButton(_ writeSave: WriteViewController, _ saveTextFiled: HistoryCollectionViewCellProperty) {
-    self.cellProperties.append(saveTextFiled)
-    collectionView.reloadData()
-    writeSave.dismiss(animated: true, completion: nil)
-  }
-  
-  var cellProperties: [HistoryCollectionViewCellProperty] = []
+                             UICollectionViewDataSource {
   
   @IBOutlet weak var collectionView: UICollectionView!
-  
+  var cellProperties: [HistoryCollectionViewCellProperty] = []
+
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
     return cellProperties.count
@@ -43,22 +36,33 @@ class HistoryViewController: UIViewController,
     super.viewDidLoad()
     view.backgroundColor = .systemGray6
     collectionView.backgroundColor = .systemGray6
-    
+
   }
   
   @IBAction func tagAddButton(_ sender: UIButton) {
     guard let viewController = storyboard?
       .instantiateViewController(withIdentifier: "WriteViewController")
             as? WriteViewController else { return }
-    viewController.delegate = self
-    collectionView.reloadData()
-    self.navigationController?.present(viewController, animated: true)
     viewController.modalPresentationStyle = .fullScreen
+    viewController.delegate = self
+    self.navigationController?.present(viewController, animated: true)
   }
-  
+
   @IBAction func tagDiscardButton(_ sender: UIButton) {
     guard cellProperties.popLast() != nil else { return }
-    print(cellProperties.count)
-    collectionView.reloadData()
+    print("tagView: discard count \(cellProperties.count)")
+    self.collectionView.reloadData()
+  }
+}
+
+
+extension HistoryViewController: WriteViewControllerDelegate {
+
+  func writeViewControllerSaveButton(_ writeSave: WriteViewController,
+                                     _ saveTextFiled: HistoryCollectionViewCellProperty) {
+
+    self.cellProperties.append(saveTextFiled)
+    print("tagView: add count \(cellProperties.count)")
+    self.collectionView.reloadData()
   }
 }

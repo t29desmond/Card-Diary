@@ -6,9 +6,10 @@
 //
 
 import UIKit
-
+// 말하는 주체가 { 말하는 방식 }
 protocol HalfModalViewControllerDelegate : AnyObject {
-  func halfmodal(_ modal: HalfModalViewController, didSelectColor color: UIColor)
+  func halfmodal(_ modal: HalfModalViewController,
+                 didSelectColor color: UIColor)
 }
 
 class HalfModalViewController: UIViewController, UISheetPresentationControllerDelegate {

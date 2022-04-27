@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 struct HistoryCollectionViewCellProperty {
-  var tagtexFiled: String
+  var tagtexFiled: String?
 }
