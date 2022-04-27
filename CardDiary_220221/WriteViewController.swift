@@ -9,7 +9,7 @@ import UIKit
 
 // 말하는 주체가 { 말하는 방식 }
 protocol WriteViewControllerDelegate: AnyObject {
-  func writeViewControllerSaveButton(_ save: HistoryCollectionViewCellProperty)
+  func writeViewControllerSaveButton(_ writeSave: WriteViewController,_ saveTextFiled: HistoryCollectionViewCellProperty)
 }
 
 class WriteViewController: UIViewController {
@@ -22,9 +22,8 @@ class WriteViewController: UIViewController {
   }
   
   @IBAction func textFieldSaveBtn(_ sender: UIButton) {
-    guard let textField = textFieldLabel.text else { return }
-    let texttag: HistoryCollectionViewCellProperty = HistoryCollectionViewCellProperty(tagtexFiled: textField)
-    self.delegate?.writeViewControllerSaveButton(texttag)
-    self.dismiss(animated: true, completion: nil)
+    guard let saveTextField = textFieldLabel.text else { return }
+    let textFieldSave: HistoryCollectionViewCellProperty = HistoryCollectionViewCellProperty(tagtexFiled: saveTextField)
+    self.delegate?.writeViewControllerSaveButton(self, textFieldSave)
   }
 }

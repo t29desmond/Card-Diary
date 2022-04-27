@@ -11,9 +11,10 @@ class HistoryViewController: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource,
                              WriteViewControllerDelegate {
-  
-  func writeViewControllerSaveButton(_ save: HistoryCollectionViewCellProperty) {
-    self.cellProperties.append(save)
+  func writeViewControllerSaveButton(_ writeSave: WriteViewController, _ saveTextFiled: HistoryCollectionViewCellProperty) {
+    self.cellProperties.append(saveTextFiled)
+    collectionView.reloadData()
+    writeSave.dismiss(animated: true, completion: nil)
   }
   
   var cellProperties: [HistoryCollectionViewCellProperty] = []
@@ -49,8 +50,8 @@ class HistoryViewController: UIViewController,
     guard let viewController = storyboard?
       .instantiateViewController(withIdentifier: "WriteViewController")
             as? WriteViewController else { return }
-    collectionView.reloadData()
     viewController.delegate = self
+    collectionView.reloadData()
     self.navigationController?.present(viewController, animated: true)
     viewController.modalPresentationStyle = .fullScreen
   }
