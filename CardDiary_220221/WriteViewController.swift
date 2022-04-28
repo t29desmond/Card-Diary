@@ -7,7 +7,7 @@
 
 import UIKit
 
-// 말하는 주체가 { 말하는 방식 }
+
 protocol WriteViewControllerDelegate: AnyObject {
   func writeViewControllerSaveButton(_ saveButton: WriteViewController,
                                      _ saveTextFiled: HistoryCollectionViewCellProperty)

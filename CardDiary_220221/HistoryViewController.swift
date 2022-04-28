@@ -10,7 +10,7 @@ import UIKit
 class HistoryViewController: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource {
-  
+
   @IBOutlet weak var collectionView: UICollectionView!
 
   private var cellProperties: [HistoryCollectionViewCellProperty] = [] {
@@ -29,14 +29,15 @@ class HistoryViewController: UIViewController,
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
             as? HitstoryCollectionViewCell else { return HitstoryCollectionViewCell() }
     
-    let property = cellProperties[indexPath.item]
-    cell.tagText.text = property.tagtexFiled
+    let historyProperty = cellProperties[indexPath.item]
+    cell.tagText.text = historyProperty.tagtexFiled
     cell.tagView.backgroundColor = .white
     cell.tagText.textColor = .black
-    
+
     return cell
   }
-  
+
+
   override func viewDidLoad() {
     super.viewDidLoad()
     loadTagText()
@@ -44,14 +45,18 @@ class HistoryViewController: UIViewController,
     collectionView.backgroundColor = .systemGray6
 
   }
-  
+
+
   @IBAction func tagAddButton(_ sender: UIButton) {
+
     guard let viewController = storyboard?
       .instantiateViewController(withIdentifier: "WriteViewController")
             as? WriteViewController else { return }
+
     viewController.modalPresentationStyle = .fullScreen
     viewController.delegate = self
     self.navigationController?.present(viewController, animated: true)
+
   }
 
   @IBAction func tagDiscardButton(_ sender: UIButton) {
@@ -68,6 +73,7 @@ class HistoryViewController: UIViewController,
     userDefaults.set(saveTegText, forKey: "cellProperties")
   }
 
+
   private func loadTagText() {
     let userDefaults = UserDefaults.standard
     guard let data = userDefaults.object(forKey: "cellProperties") as? [[String: Any]] else { return }
@@ -77,6 +83,7 @@ class HistoryViewController: UIViewController,
       return HistoryCollectionViewCellProperty(tagtexFiled: title)
     }
   }
+
 }
 
 
@@ -86,7 +93,13 @@ extension HistoryViewController: WriteViewControllerDelegate {
                                      _ saveTextFiled: HistoryCollectionViewCellProperty) {
 
     self.cellProperties.append(saveTextFiled)
+
     print("tagView: add count \(cellProperties.count)")
     self.collectionView.reloadData()
   }
 }
+
+
+
+
+

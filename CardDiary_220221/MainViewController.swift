@@ -3,10 +3,9 @@
 //  CardDiary_220221
 //
 //  Created by 윤대식 on 2022/03/04.
+//
 
 import UIKit
-
-
 
 class MainViewController: UIViewController,
                           UICollectionViewDelegate,
@@ -30,8 +29,7 @@ class MainViewController: UIViewController,
     let property = cellProperties[indexPath.item]
     cell.delegate = self
     cell.setProperty(property)
-    print("cell item : \(indexPath.item)")
-
+//    print("cell item : \(indexPath.item)")
     return cell
   }
 
@@ -43,37 +41,14 @@ class MainViewController: UIViewController,
 }
 
 
-extension MainViewController: HalfModalViewControllerDelegate {
-
-  func halfmodal(_ modal: HalfModalViewController, didSelectColor color : UIColor) {
-
-    let cell = collectionView.cellForItem(at: indexPoint!) as? MainCollectionViewCell
-    cell?.cardView.backgroundColor = color
-    cellProperties[indexPoint!.item].backgroundColor = color
-
-    print("indexPoint selected(cell point): \(indexPoint!.item)")
-    modal.dismiss(animated: true, completion: nil)
-
-  }
-}
-
-
 extension MainViewController: MainCollectionViewCellDelegate {
-
-  func mainColleciontViewHistorySegueDidTouchButton(_ seguePush: MainCollectionViewCell) {
-
-    guard let viewController = storyboard?
-            .instantiateViewController(withIdentifier: "HistoryViewController")
-            as? HistoryViewController else { return }
-
-    self.navigationController?.pushViewController(viewController, animated: true)
-  }
 
 
   func mainCollectionViewCellDidTouchButton(_ cell: MainCollectionViewCell) {
-    let seleteditem = self.collectionView.indexPath(for: cell)
+
+    guard let seleteditem = self.collectionView.indexPath(for: cell) else { return }
     indexPoint = seleteditem
-    print("item selected(Half modal): \(seleteditem!.item)")
+    print("item selected(Half modal): \(seleteditem.item)")
 
     guard let viewController = storyboard?
             .instantiateViewController(withIdentifier: "HalfModalViewController")
@@ -82,4 +57,33 @@ extension MainViewController: MainCollectionViewCellDelegate {
     self.present(viewController, animated: true, completion: nil)
   }
 
+// 셀이 무엇인지 알게 해주는 메서드
+  func mainColleciontViewHistorySegueDidTouchButton(_ seguePush: MainCollectionViewCell) {
+
+    guard let sletedsegue = self.collectionView.indexPath(for: seguePush) else { return }
+    print("selected segue (History): \(sletedsegue.item)")
+
+    guard let viewController = storyboard?
+            .instantiateViewController(withIdentifier: "HistoryViewController")
+            as? HistoryViewController else { return }
+    //    viewController.delegate = self // 어떤걸 받을 건지
+    self.navigationController?.pushViewController(viewController, animated: true)
+  }
 }
+
+
+extension MainViewController: HalfModalViewControllerDelegate {
+
+  func halfmodal(_ modal: HalfModalViewController, didSelectColor color : UIColor) {
+    guard let cell = collectionView.cellForItem(at: indexPoint!)
+            as? MainCollectionViewCell else { return }
+
+    cell.cardView.backgroundColor = color
+    cellProperties[indexPoint!.item].backgroundColor = color
+
+    print("indexPoint selected(cell point): \(indexPoint!.item)")
+    modal.dismiss(animated: true, completion: nil)
+  }
+}
+
+
